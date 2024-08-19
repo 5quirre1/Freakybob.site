@@ -1,7 +1,115 @@
-<h1>These are all the people who helped make Freakybob.site a real thing!</h1>
-<p><strong>Squirrel</strong></p>
-<p>Wish</p>
-<p>#2 Twitter Hater</p>
-<p>Mass's Effect 2 (KM)</p>
-<p>Saam</p>
-<p>Noah</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freakybob.site Contributors</title>
+    <style>
+        body {
+            background-color: #FAFAD2; 
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .contributors {
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap; 
+            margin-top: 30px; 
+        }
+        .contributors button {
+            background: none;
+            border: none;
+            color: #555;
+            margin: 0 15px;
+            font-size: 40px; 
+            cursor: pointer;
+            padding: 0;
+        }
+        .contributors button:hover {
+            color: #879602;
+        }
+        .description {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 200px; 
+            height: auto;
+            border-radius: 50%; 
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>These are all the people who helped make Freakybob.site a real thing!</h1>
+    <audio 
+        src="https://www.televisiontunes.com/uploads/audio/Spongebob%20Squarepants%20-%20Best%20Day%20Ever.mp3" 
+        loop 
+        autoplay 
+        muted>
+    </audio>
+    <a href="People.html">
+        <button>Others(page will be worked on more soon)</button>
+      </a>
+    <div class="contributors">
+        <button onclick="toggleDescription('Squirrel')">Squirrel</button>
+        <button onclick="toggleDescription('Wish')">Wish</button>
+        <button onclick="toggleDescription('#2 Twitter Hater')">#2 Twitter Hater</button>
+    </div>
+    <div id="description" class="description"></div>
+
+    <div class="image-container" id="squirrel-image" style="display: none;">
+        <img src="https://images-ext-1.discordapp.net/external/s7ppHNFRFl9f3IeDRqwDMrU1LthC0rxAtHu3yqgZj5E/https/cdn.discordapp.com/avatars/1127731486485921813/6fe7910d627c189a2ca18884269807dc.png?format=webp&quality=lossless" alt="Squirrel Image">
+    </div>
+
+    <div class="image-container" id="wish-image" style="display: none;">
+        <img src="https://cdn.discordapp.com/avatars/1073962008413749298/0177e05736abfd34f76df72fb0b7be51?size=1024" alt="Wish Image">
+    </div>
+    <div class="image-container" id="twitter-image" style="display: none;">
+        <img src="https://cdn.discordapp.com/avatars/1264743088283451504/baa92bf6c44cc7283deefbbf24c5df36.webp?size=1024&format=webp&width=0&height=256" alt="Twitter image">
+    </div>
+    <script>
+        let currentDescription = null;
+
+        function toggleDescription(name) {
+            const descriptions = {
+                'Squirrel': 'Squirrel Bought the domain and set up the website!',
+                'Wish': 'Was the main cause of all of this!',
+                '#2 Twitter Hater': 'Is giving the Website pictures of our beloved Freakbob!',
+                
+            };
+
+            const descriptionDiv = document.getElementById('description');
+            const squirrelImage = document.getElementById('squirrel-image');
+            const wishImage = document.getElementById('wish-image');
+            const twitterImage = document.getElementById('twitter-image');
+        
+            if (currentDescription === name) {
+                descriptionDiv.innerText = ''; 
+                currentDescription = null;
+                squirrelImage.style.display = 'none'; 
+                wishImage.style.display = 'none'; 
+                twitterImage.style.display = 'none'; 
+            } else {
+                descriptionDiv.innerText = descriptions[name] || 'Description not available.';
+                currentDescription = name;
+                squirrelImage.style.display = (name === 'Squirrel') ? 'block' : 'none';
+                wishImage.style.display = (name === 'Wish') ? 'block' : 'none'; 
+                twitterImage.style.display = (name === '#2 Twitter Hater') ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>
