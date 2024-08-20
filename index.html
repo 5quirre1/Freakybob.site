@@ -6,7 +6,7 @@
     <meta name="description" content="A place for Freakybob.">
     <style>
         body {
-            background-image: url('spongbob.jpg'); /* Replace with your desired background image */
+            background-image: url('spongbob.jpg');
             background-size: cover;
             background-color: yellow;
             background-repeat: no-repeat;
@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         h1 {
             text-align: center;
             color: white;
@@ -22,7 +22,31 @@
         }
 
         button {
-            margin-left: 460px; /* Adjust this value as needed for centering */
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -31,10 +55,44 @@
     <h1>Freakybob</h1>
     <a href="foundingpeople.html"><button>View the people who made Freakybob.site possible!</button></a>
 
-    <!-- Autoplay background music -->
-    <audio autoplay loop>
+    
+    <div id="sound-popup" class="popup">
+        <div class="popup-content">
+            <p>Do you want to enable sound on this website?</p>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+        </div>
+    </div>
+
+    <audio id="background-music" loop>
         <source src="freakybobvoice.mp3" type="audio/mp3">
     </audio>
 
+    <script>
+        
+        const popup = document.getElementById('sound-popup');
+        const yesButton = document.getElementById('yes-button');
+        const noButton = document.getElementById('no-button');
+        const backgroundMusic = document.getElementById('background-music');
+
+        function playMusic() {
+            backgroundMusic.play();
+        }
+
+        yesButton.addEventListener('click', () => {
+            playMusic();
+            popup.style.display = 'none'; 
+        });
+
+        noButton.addEventListener('click', () => {
+            popup.style.display = 'none'; 
+        });
+
+        window.onload = () => {
+            popup.style.display = 'flex';
+        };
+    </script>
+
 </body>
 </html>
+
