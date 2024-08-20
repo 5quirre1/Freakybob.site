@@ -75,7 +75,6 @@
     </div>
 
     <div class="image-container" id="wish-image" style="display: none;">
-        <a href="https://github.com/wish13yt"> </a>
        <img src="https://cdn.discordapp.com/avatars/1073962008413749298/0177e05736abfd34f76df72fb0b7be51?size=1024" alt="Wish Image">
     </div>
     <div class="image-container" id="twitter-image" style="display: none;">
@@ -98,7 +97,10 @@
             const squirrelImage = document.getElementById('squirrel-image');
             const wishImage = document.getElementById('wish-image');
             const twitterImage = document.getElementById('twitter-image');
-        
+        document.getElementById( "wishImage" ).onclick = function() {
+    console.log("Hi! I'm Wish. I'm happy to be on this page :)")
+            window.location.replace("https://github.com/wish13yt");
+};
             if (currentDescription === name) {
                 descriptionDiv.innerText = ''; 
                 currentDescription = null;
