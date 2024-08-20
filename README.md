@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <style>
-    h1 {
-      text-align: center;
-      }
-  </style>
+
 <body>
   <h1>I bought a freakybob domain. Idk why, but I was destained for it.
 freakybob.site is just meant for a meme relating to a freaky spongbob! We are hoping to put some episodes and a music gallery! I hope You guys enjoy this project as it is still being 
