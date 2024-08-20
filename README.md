@@ -3,6 +3,7 @@
   <style>
     h1 {
       text-align: center;
+      }
   </style>
 <body>
   <h1>I bought a freakybob domain. Idk why, but I was destained for it.
