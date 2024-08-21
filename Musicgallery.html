@@ -24,22 +24,20 @@
         }
 
         .music-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
             padding: 20px;
-            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .music-item {
             background-color: #cc02a0;
             border-radius: 10px;
             padding: 20px;
-            width: 100%;
-            max-width: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease;
-            margin: 0 auto;
         }
 
         .music-item:hover {
@@ -110,29 +108,28 @@
                 <source src="03. Jelly Fish Jam.mp3" type="audio/mp3">
             </audio>
         </div>
-    </div>
 
-<div class="music-item">
-            <h3>F.U.N song!</h3>
+        <div class="music-item">
+            <h3>F.U.N Song!</h3>
             <audio controls>
                 <source src="F.U.N Song.mp3" type="audio/mp3">
             </audio>
         </div>
 
-<div class="music-item">
+        <div class="music-item">
             <h3>Doing the Sponge</h3>
             <audio controls>
                 <source src="Doing the Sponge.mp3" type="audio/mp3">
             </audio>
         </div>
-
-<div class="music-item">
+        
+        <div class="music-item">
             <h3>Spongebob ScaredyPants!</h3>
             <audio controls>
                 <source src="Spongebob ScaredyPants.mp3">
             </audio>
 </div>
-    
+
     <footer>
         <p>Enjoy the best of SpongeBob SquarePants music!</p>
     </footer>
