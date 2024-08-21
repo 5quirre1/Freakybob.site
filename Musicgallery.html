@@ -156,17 +156,20 @@
     </div>
 
     <script>
-        var songs = document.querySelectorAll(".song");
+       var songs = document.querySelectorAll("audio");
 
 function playSong(e) {
-  songs.forEach(el => {
-    el.style.play();
-  });
-  e.currentTarget.pause();
+    songs.forEach(song => {
+        if (song !== e.currentTarget) {
+            song.pause();
+            song.currentTime = 0;
+        }
+    });
+    e.currentTarget.play();
 };
 
-songs.forEach(el => {
-  el.addEventListener("click", playSong);
+songs.forEach(song => {
+    song.addEventListener("play", playSong);
 });
     </script>
     <footer>
