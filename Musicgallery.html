@@ -32,7 +32,7 @@
 
         .music-gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
@@ -69,6 +69,7 @@
             border-top: 4px solid #ffd700;
             color: #333;
             font-size: 1em;
+            margin-top: auto;
         }
 
         button {
@@ -85,22 +86,6 @@
         button:hover {
             background-color: #ff3bef;
             transform: scale(1.10);
-        }
-
-        @media (max-width: 768px) {
-            .music-gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .music-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
         }
     </style>
 </head>
@@ -140,14 +125,14 @@
             </audio>
         </div>
 
-<div class="music-item">
+        <div class="music-item">
             <h3>Loop-dee-Loop</h3>
             <audio controls>
                 <source src="08. Loop-dee-Loop.mp3" type="audio/mp3">
             </audio>
         </div>
 
-<div class="music-item">
+        <div class="music-item">
             <h3>The Campfire Song Song!</h3>
             <audio controls>
                 <source src="16. The Campfire Song Song.mp3" type="audio/mp3">
@@ -175,71 +160,70 @@
             </audio>
         </div>
     
-
-    <div class="music-item">
+        <div class="music-item">
             <h3>Goofy Goober Rock!</h3>
             <audio controls>
                 <source src="29. Goofy Goober Rock.mp3" type="audio/mp3">
             </audio>
         </div>
-    
 
-<div class="music-item">
+        <div class="music-item">
             <h3>Happy Birthday!</h3>
             <audio controls>
                 <source src="59a Happy Birthday.mp3" type="audio/mp3">
             </audio>
         </div>
-    
 
-    <div class="music-item">
+        <div class="music-item">
             <h3>Christmas Is Mine!</h3>
             <audio controls>
                 <source src="63. Christmas Is Mine.mp3" type="audio/mp3">
             </audio>
         </div>
-    
 
-<div class="music-item">
+        <div class="music-item">
             <h3>Stadium Rave!</h3>
             <audio controls>
                 <source src="66a Stadium Rave.mp3" type="audio/mp3">
             </audio>
         </div>
 
-    <div class="music-item">
+        <div class="music-item">
             <h3>Bikini Bottom Day!</h3>
             <audio controls>
                 <source src="44. Bikini Bottom Day.mp3" type="audio/mp3">
             </audio>
         </div>
 
-<div class="music-item">
+        <div class="music-item">
             <h3>BFF Song!</h3>
             <audio controls>
                 <source src="45. BFF.mp3" type="audio/mp3">
             </audio>
         </div>
+    </div>
 
     <script>
        var songs = document.querySelectorAll("audio");
 
-function playSong(e) {
-    songs.forEach(song => {
-        if (song !== e.currentTarget) {
-            song.pause();
-            song.currentTime = 0;
-        }
-    });
-    e.currentTarget.play();
-};
+        function playSong(e) {
+            songs.forEach(song => {
+                if (song !== e.currentTarget) {
+                    song.pause();
+                    song.currentTime = 0;
+                }
+            });
+            e.currentTarget.play();
+        };
 
-songs.forEach(song => {
-    song.addEventListener("play", playSong);
-});
+        songs.forEach(song => {
+            song.addEventListener("play", playSong);
+        });
     </script>
+
     <footer>
         <p>Enjoy the best of SpongeBob SquarePants music!</p>
     </footer>
 </body>
 </html>
+
