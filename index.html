@@ -26,9 +26,21 @@
             text-align: center;
             color: rgb(218, 203, 3);
             font-size: 37px;
-            margin-top: -380px;
+            margin-top: -350px;
         }
 
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 197, 2, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
         button {
             margin: 20px 0;
             padding: 10px 20px;
@@ -40,20 +52,6 @@
             max-width: 200px;
             width: 100%;
         }
-
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
         .popup-content {
             background: white;
             padding: 20px;
@@ -64,8 +62,8 @@
 
         #mute-button {
             position: fixed;
-            top: 10px; /* Distance from the top */
-            right: 10px; /* Distance from the right */
+            top: 10px;
+            right: 10px;
             padding: 10px 15px;
             background-color: rgba(255, 215, 0, 0.8);
             border: none;
@@ -83,7 +81,7 @@
 
     <div id="sound-popup" class="popup">
         <div class="popup-content">
-            <p>Can we have permission for sound? If not, you won't hear Freakybob :( </p>
+            <p>Can we have permission for sound? If not, you won't hear the main screen music :( </p>
             <button id="yes-button">Yes</button>
             <button id="no-button">No</button>
         </div>
@@ -133,6 +131,7 @@
 
 </body>
 </html>
+
 
 
 
