@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpongeBob Music Gallery</title>
-     <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
             background-color: #f2f701;
-            font-family: 'Comic Sans MS',sans-serif;
+            font-family: 'Comic Sans MS', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -37,10 +36,10 @@
             border-radius: 10px;
             padding: 20px;
             width: 100%;
-            max-width: 300px; /* Limit the width to ensure items are not too wide */
+            max-width: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease;
-            margin: 0 auto; /* Center align items in their container */
+            margin: 0 auto;
         }
 
         .music-item:hover {
@@ -50,7 +49,7 @@
         .music-item h3 {
             color: #ffeb3b;
             margin-bottom: 10px;
-            font-size: 1.2em; /* Adjust font size for better readability on small screens */
+            font-size: 1.2em;
         }
 
         .music-item audio {
@@ -64,22 +63,35 @@
             background-color: #87cefa;
             border-top: 4px solid #ffd700;
             color: #333;
-            font-size: 1em; /* Adjust font size for better readability */
+            font-size: 1em;
         }
+
         button {
-            margin-left: -200px;
-            margin-top: -100px;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ffeb3b;
+        }
     </style>
+</head>
 <body>
-<a>
-<a href="index.html"><button>Go back to main Website!</button>
-</a>
+    <a href="index.html">
+        <button>Go back to main Website!</button>
+    </a>
     
     <h1>SpongeBob Music Gallery</h1>
 
     <div class="music-gallery">
         <div class="music-item">
-            <h3>Theme song (Original)</h3>
+            <h3>Theme Song (Original)</h3>
             <audio controls>
                 <source src="01. SpongeBob SquarePants Theme Song.mp3" type="audio/mp3">
             </audio>
@@ -103,6 +115,6 @@
     <footer>
         <p>Enjoy the best of SpongeBob SquarePants music!</p>
     </footer>
-
 </body>
 </html>
+
