@@ -19,6 +19,7 @@
             background-color: #87cefa;
             margin: 0;
             border-bottom: 4px solid #ffd700;
+            font-size: 2em;
         }
 
         .music-gallery {
@@ -33,9 +34,11 @@
             background-color: #cc02a0;
             border-radius: 10px;
             padding: 20px;
-            width: 200px;
+            width: 100%;
+            max-width: 300px; /* Limit the width to ensure items are not too wide */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease;
+            margin: 0 auto; /* Center align items in their container */
         }
 
         .music-item:hover {
@@ -45,7 +48,7 @@
         .music-item h3 {
             color: #ffeb3b;
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 1.2em; /* Adjust font size for better readability on small screens */
         }
 
         .music-item audio {
@@ -59,6 +62,7 @@
             background-color: #87cefa;
             border-top: 4px solid #ffd700;
             color: #333;
+            font-size: 1em; /* Adjust font size for better readability */
         }
     </style>
 </head>
@@ -87,7 +91,6 @@
                 <source src="Placeholder" type="audio/mp3">
             </audio>
         </div>
-
     </div>
 
     <footer>
