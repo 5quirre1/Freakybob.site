@@ -6,11 +6,18 @@
     <title>SpongeBob Music Gallery</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/5quirre1/Freakybob.site/main/favicon.ico">
     <style>
-        body {
-            background-color: #f2f701;
-            font-family: 'Comic Sans MS', sans-serif;
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #f2f701;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+
+        body {
+            flex: 1;
             text-align: center;
         }
 
@@ -26,10 +33,11 @@
         .music-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
+            gap: 20px;
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            flex: 1;
         }
 
         .music-item {
@@ -56,7 +64,6 @@
         }
 
         footer {
-            margin-top: 40px;
             padding: 20px;
             background-color: #87cefa;
             border-top: 4px solid #ffd700;
@@ -65,7 +72,7 @@
         }
 
         button {
-            background-color: #ffd700;
+            background-color: #ffbb00;
             border: none;
             border-radius: 5px;
             color: #333;
@@ -76,7 +83,24 @@
         }
 
         button:hover {
-            background-color: #ffeb3b;
+            background-color: #ff3bef;
+            transform: scale(1.10);
+        }
+
+        @media (max-width: 768px) {
+            .music-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .music-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -122,17 +146,17 @@
                 <source src="Doing the Sponge.mp3" type="audio/mp3">
             </audio>
         </div>
-        
+
         <div class="music-item">
-            <h3>Spongebob ScaredyPants!</h3>
+            <h3>New Song</h3>
             <audio controls>
-                <source src="Spongebob ScaredyPants.mp3">
+                <source src="New Song.mp3" type="audio/mp3">
             </audio>
-</div>
+        </div>
+    </div>
 
     <footer>
         <p>Enjoy the best of SpongeBob SquarePants music!</p>
     </footer>
 </body>
 </html>
-
