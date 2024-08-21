@@ -155,6 +155,20 @@
         </div>
     </div>
 
+    <script>
+        var songs = document.querySelectorAll(".song");
+
+function playSong(e) {
+  songs.forEach(el => {
+    el.style.play();
+  });
+  e.currentTarget.pause();
+};
+
+songs.forEach(el => {
+  el.addEventListener("click", playSong);
+});
+    </script>
     <footer>
         <p>Enjoy the best of SpongeBob SquarePants music!</p>
     </footer>
