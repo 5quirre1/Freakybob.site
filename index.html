@@ -129,7 +129,7 @@
     </audio>
 
     <!-- Mute/Unmute Button -->
-    <button id="mute-button">Mute Music</button>
+    <button id="mute-button" style="display:none;">Mute Music</button>
     <a href="Musicgallery.html"><button>Listen to Spongebob music!</button></a>
 
     <script>
@@ -141,6 +141,7 @@
 
         function playMusic() {
             backgroundMusic.play();
+            muteButton.style.display = 'block';
         }
 
         yesButton.addEventListener('click', () => {
@@ -168,6 +169,9 @@
             const musicPermission = localStorage.getItem('musicPermission');
             if (musicPermission === 'granted') {
                 playMusic();
+                popup.style.display = 'none';
+            } else if (musicPermission === 'denied') {
+                popup.style.display = 'none';
             } else {
                 popup.style.display = 'flex';
             }
@@ -176,5 +180,6 @@
 
 </body>
 </html>
+
 
 
