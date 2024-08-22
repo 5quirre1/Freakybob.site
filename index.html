@@ -133,9 +133,6 @@
     <a href="Musicgallery.html"><button>Listen to Spongebob music!</button></a>
 
     <script>
-        const popup = document.getElementById('sound-popup');
-        const yesButton = document.getElementById('yes-button');
-        const noButton = document.getElementById('no-button');
         const backgroundMusic = document.getElementById('background-music');
         const muteButton = document.getElementById('mute-button');
 
@@ -143,17 +140,6 @@
             backgroundMusic.play();
             muteButton.style.display = 'block';
         }
-
-        yesButton.addEventListener('click', () => {
-            playMusic();
-            popup.style.display = 'none'; 
-            localStorage.setItem('musicPermission', 'granted');
-        });
-
-        noButton.addEventListener('click', () => {
-            popup.style.display = 'none'; 
-            localStorage.setItem('musicPermission', 'denied');
-        });
 
         muteButton.addEventListener('click', () => {
             if (backgroundMusic.muted) {
@@ -165,17 +151,6 @@
             }
         });
 
-        window.onload = () => {
-            const musicPermission = localStorage.getItem('musicPermission');
-            if (musicPermission === 'granted') {
-                playMusic();
-                popup.style.display = 'none';
-            } else if (musicPermission === 'denied') {
-                popup.style.display = 'none';
-            } else {
-                popup.style.display = 'flex';
-            }
-        };
     </script>
 
 </body>
