@@ -13,7 +13,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Overlay with slight darkness */
+            background-color: rgba(0, 0, 0, 0.4);
             z-index: -1;
         }
 
@@ -114,9 +114,9 @@
 <body>
 
     <h1>Freakybob</h1>
-        <a href="foundingpeople.html"><button>Check out the people who made this possible!</button>
+    <a href="foundingpeople.html"><button>Check out the people who made this possible!</button></a>
+    
     <div id="sound-popup" class="popup">
-    <!DOCTYPE html>
         <div class="popup-content">
             <p>Can we have permission for sound? If not, you won't hear the main screen music :( </p>
             <button id="yes-button">Yes</button>
@@ -146,10 +146,12 @@
         yesButton.addEventListener('click', () => {
             playMusic();
             popup.style.display = 'none'; 
+            localStorage.setItem('musicPermission', 'granted');
         });
 
         noButton.addEventListener('click', () => {
             popup.style.display = 'none'; 
+            localStorage.setItem('musicPermission', 'denied');
         });
 
         muteButton.addEventListener('click', () => {
@@ -163,13 +165,16 @@
         });
 
         window.onload = () => {
-            popup.style.display = 'flex';
+            const musicPermission = localStorage.getItem('musicPermission');
+            if (musicPermission === 'granted') {
+                playMusic();
+            } else {
+                popup.style.display = 'flex';
+            }
         };
     </script>
 
 </body>
 </html>
-
-
 
 
