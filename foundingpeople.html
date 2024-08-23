@@ -3,37 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freakybob.site Contributors</title>
+    <title>Others</title>
     <style>
         body {
-            background-image: url("freakybob.jpg");
-            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+            background-color: #f92cfd; 
+            font-family: Arial, sans-serif;
         }
         h1 {
             color: #333;
             text-align: center;
         }
-        button {
-            margin-left: 200px;
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
         }
-        .contributors {
-            display: flex;
-            justify-content: center; 
-            flex-wrap: wrap; 
-            margin-top: 70px; 
-        }
-        .contributors button {
+        .button-container button {
             background: none;
             border: none;
             color: #555;
             margin: 0 15px;
-            font-size: 40px; 
+            font-size: 20px;
             cursor: pointer;
-            padding: 0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #555;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .button-container button:hover {
+            color: #6f0279;
+            background-color: #f3ef14;
+        }
+        .contributors {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contributors button {
+            background-color: #d6c20b;
+            border: none;
+            color: #6d5a05;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            margin: 0 10px;
         }
         .contributors button:hover {
-            color: #4e0296;
-            background-color: rgb(220, 248, 60);
+            color: #f106f1;
         }
         .description {
             text-align: center;
@@ -46,9 +60,9 @@
             margin-top: 20px;
         }
         .image-container img {
-            width: 200px; 
+            width: 200px;
             height: auto;
-            border-radius: 50%; 
+            border-radius: 50%;
         }
         audio {
             display: none;
@@ -57,66 +71,49 @@
 </head>
 <body>
 
-    <h1>These are all the people who helped make freakybob.site a real thing!</h1>
+    <h1>The main people who helped make freakybob.site a real thing!</h1>
     <audio 
-        src="https://www.televisiontunes.com/uploads/audio/Spongebob%20Squarepants%20-%20Best%20Day%20Ever.mp3" 
+        src="66a Stadium Rave.mp3" 
         loop 
         autoplay>
     </audio>
-    </audio>
-    <a href="People.html">
-        <button>Others (Page will be worked on soon™️)</button>
-      </a>
-    <a href="index.html">
-        <button>Go back</button>
-    </a>
+    <div class="button-container">
+        <a href="index.html">
+            <button>Go back to Main Website :3</button>
+        </a>
+    </div>
+
     <div class="contributors">
-        <button onclick="toggleDescription('Squirrel')">Squirrel</button>
-        <button onclick="toggleDescription('Wish')">Wish</button>
-        <button onclick="toggleDescription('#2 Twitter Hater')">#2 Twitter Hater</button>
+        <button onclick="showInfo('Squirrel')">Squirrel</button>
+        <button onclick="showInfo('Wish')">Wish</button>
+        <button onclick="showInfo('Hater')">#2nd Twitter Hater</button>
     </div>
     <div id="description" class="description"></div>
 
-    <div class="image-container" id="squirrel-image" style="display: none;">
-        <img src="squirrel.webp" alt="Squirrel Image">
+    <div class="image-container" id="person-image" style="display: none;">
+        <img id="image" alt="Person Image">
     </div>
 
-    <div class="image-container" id="wish-image" style="display: none;">
-        <img src="wish.png" alt="Wish Image">
-    </div>
-    <div class="image-container" id="twitter-image" style="display: none;">
-        <img src="twitterhater.webp" alt="Twitter image">
-    </div>
     <script>
-        let currentDescription = null;
-
-        function toggleDescription(name) {
+        function showInfo(name) {
             const descriptions = {
-                'Squirrel': 'Squirrel bought the domain and set up the website!',
-                'Wish': 'Wish was the main cause of all of this!',
-                '#2 Twitter Hater': '#2 Twitter Hater is giving this website pictures of our beloved Freakybob!',
-                
+                'Squirrel': 'Bought the Domain and did the most of the Website!',
+                'Wish': 'Wish did some coding to help the website!',
+                '#2nd Twitter Hater': '#2nd Twitter Hater helped with giving all sorts of spongebob images!',
+            };
+
+            const images = {
+                'Squirrel': 'squirrel.webp',
+                'Wish': 'wish.png',
+                'Hater': 'twitterhater.webp',
             };
 
             const descriptionDiv = document.getElementById('description');
-            const squirrelImage = document.getElementById('squirrel-image');
-            const wishImage = document.getElementById('wish-image');
-            const twitterImage = document.getElementById('twitter-image');
-        
-            if (currentDescription === name) {
-                descriptionDiv.innerText = ''; 
-                currentDescription = null;
-                squirrelImage.style.display = 'none'; 
-                wishImage.style.display = 'none'; 
-                twitterImage.style.display = 'none'; 
-            } else {
-                descriptionDiv.innerText = descriptions[name] || 'Description not available.';
-                currentDescription = name;
-                squirrelImage.style.display = (name === 'Squirrel') ? 'block' : 'none';
-                wishImage.style.display = (name === 'Wish') ? 'block' : 'none'; 
-                twitterImage.style.display = (name === '#2 Twitter Hater') ? 'block' : 'none';
-            }
+            const personImage = document.getElementById('person-image');
+            const image = document.getElementById('image');
+
+            descriptionDiv.innerText = descriptions[name] || 'Information not available.';
+            image.src = images[name] || '';
+            personImage.style.display = (name in images) ? 'block' : 'none';
         }
     </script>
-</body>
-</html>
