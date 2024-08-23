@@ -80,6 +80,19 @@ button.enabled {
     background-color: #4a6f8c;
     cursor: pointer;
 }
+        #mute-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background-color: rgb(1, 170, 128);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1001;
+        }
+
 
         #achievements p {
             background-color: #2a3c5d;
@@ -125,6 +138,11 @@ button.enabled {
     </style>
 </head>
 <body>
+    
+    <audio id="background-music" loop>
+        <source src="Sneaky-Snitch(chosic.com).mp3" type="audio/mp3">
+    </audio>
+
     <audio id="click-sound" src="https://github.com/5quirre1/Freakybob.site/raw/main/i%E2%80%99m-spongebob-made-with-Voicemod.mp3"></audio>
     <div id="container">
         <div id="shop">
@@ -146,9 +164,11 @@ button.enabled {
             </div>
         </div>
     </div>
+<!-- Mute/Unmute Button -->
+    <button id="mute-button" style="display:none;">Mute Music</button>
 
     <script>
-        let clickCount = 0;
+let clickCount = 0;
 let clicksPerSecond = 0;
 let autoClicker = false;
 let freakyStar = { owned: false, clicksPerSecond: 0 };
@@ -182,16 +202,18 @@ const achievements = [
 ];
 
 const unlockedAchievements = new Set();
-let isPlayingSound = false;
+let isPlayingSound = true; // Default to sound on
 
 function playClickSound() {
-    if (isPlayingSound) return; // Prevent multiple plays
-    isPlayingSound = true;
+    if (!isPlayingSound) return; // Prevent sound if muted
 
     const clickSound = new Audio('https://github.com/5quirre1/Freakybob.site/raw/main/i%E2%80%99m-spongebob-made-with-Voicemod.mp3');
-    clickSound.play().catch(err => console.error(err)).finally(() => {
-        isPlayingSound = false; // Allow sound to play again
-    });
+    clickSound.play().catch(err => console.error(err));
+}
+
+function toggleMute() {
+    isPlayingSound = !isPlayingSound;
+    document.getElementById('mute-button').textContent = isPlayingSound ? 'Mute' : 'Unmute';
 }
 
 function updateButtons() {
@@ -324,9 +346,11 @@ document.getElementById('buy-multiplier-8').addEventListener('click', (e) => {
         buyMultiplier(8);
     }
 });
+document.getElementById('mute-button').addEventListener('click', toggleMute);
 
 updateButtons();
 updateStats();
+
 
     </script>
 </body>
