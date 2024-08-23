@@ -117,6 +117,7 @@
     </style>
 </head>
 <body>
+    <audio id="click-sound" src="sounds/i’m-spongebob-made-with-Voicemod.mp3"></audio>
     <div id="container">
         <div id="shop">
             <h2>Shop</h2>
@@ -187,9 +188,17 @@
             checkAchievements();
         }
 
-        function incrementClicks() {
-            clickCount += clickMultiplier;
-            updateStats();
+            function incrementClicks() {
+    clickCount += clickMultiplier;
+    updateStats();
+    playClickSound(); // Play sound effect
+}
+
+function playClickSound() {
+    const clickSound = document.getElementById('click-sound');
+    clickSound.play();
+}
+
         }
 
         function buyAutoClicker() {
