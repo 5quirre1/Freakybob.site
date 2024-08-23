@@ -69,15 +69,15 @@
         button:hover {
             background-color: #3a5e7a;
         }
+        button.disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
         #achievements p {
             background-color: #2a3c5d;
             padding: 5px;
             border-radius: 5px;
             margin: 5px 0;
-        }
-        .disabled {
-            background-color: #6c757d;
-            cursor: not-allowed;
         }
         @keyframes slide-in-right {
             0% {
@@ -121,11 +121,11 @@
     <div id="container">
         <div id="shop">
             <h2>Shop</h2>
-            <button id="buy-autoclicker">Buy Autoclicker (100 clicks)</button>
-            <button id="buy-freakystar">Buy Freaky Star (300 clicks)</button>
+            <button id="buy-autoclicker" class="disabled">Buy Autoclicker (100 clicks)</button>
+            <button id="buy-freakystar" class="disabled">Buy Freaky Star (300 clicks)</button>
             <h3>Upgrades</h3>
-            <button id="buy-multiplier-1">1+ Clicks Multiplier (15 clicks)</button>
-            <button id="buy-multiplier-8">8+ Clicks Multiplier (120 clicks)</button>
+            <button id="buy-multiplier-1" class="disabled">1+ Clicks Multiplier (15 clicks)</button>
+            <button id="buy-multiplier-8" class="disabled">8+ Clicks Multiplier (120 clicks)</button>
         </div>
         <div id="click-area">
             <div id="clicker"></div>
@@ -188,17 +188,15 @@
             checkAchievements();
         }
 
-            function incrementClicks() {
-    clickCount += clickMultiplier;
-    updateStats();
-    playClickSound(); // Play sound effect
-}
+        function incrementClicks() {
+            clickCount += clickMultiplier;
+            updateStats();
+            playClickSound(); // Play sound effect
+        }
 
-function playClickSound() {
-    const clickSound = document.getElementById('click-sound');
-    clickSound.play();
-}
-
+        function playClickSound() {
+            const clickSound = document.getElementById('click-sound');
+            clickSound.play();
         }
 
         function buyAutoClicker() {
@@ -250,7 +248,7 @@ function playClickSound() {
 
         function updateClicksPerSecond() {
             clicksPerSecond = (autoClicker ? 1 : 0) + (freakyStar.owned ? freakyStar.clicksPerSecond : 0);
-            document.getElementById('clicks-per-second').textContent = clicksPerSecond.toFixed(2);
+            document.getElementById('clicks-per-second').textContent = clicksPerSecond;
         }
 
         function checkAchievements() {
@@ -263,18 +261,14 @@ function playClickSound() {
         }
 
         function displayAchievement(name) {
-            const achievementsDiv = document.getElementById('achievements');
+            const achievementsElement = document.getElementById('achievements');
             const achievementElement = document.createElement('p');
-            achievementElement.classList.add('achievement');
+            achievementElement.className = 'achievement';
             achievementElement.textContent = name;
-            achievementsDiv.appendChild(achievementElement);
-
+            achievementsElement.appendChild(achievementElement);
             setTimeout(() => {
                 achievementElement.classList.add('out');
-                setTimeout(() => {
-                    achievementElement.remove();
-                }, 500);
-            }, 2000);
+            }, 3000);
         }
 
         document.getElementById('clicker').addEventListener('click', incrementClicks);
@@ -283,11 +277,7 @@ function playClickSound() {
         document.getElementById('buy-multiplier-1').addEventListener('click', () => buyMultiplier(1));
         document.getElementById('buy-multiplier-8').addEventListener('click', () => buyMultiplier(8));
 
-        updateButtons();
-        updateStats();
+        setInterval(updateButtons, 100);
     </script>
 </body>
 </html>
-
-
-
