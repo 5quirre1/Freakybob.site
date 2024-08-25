@@ -6,22 +6,33 @@
     <title>Others</title>
     <style>
         body {
-            background-color: #f92cfd; 
+            background-color: #ADD8E6;
             font-family: Arial, sans-serif;
         }
         h1 {
             color: #333;
             text-align: center;
         }
+        .button {
+            background: none;
+            border: none;
+            color: #555;
+            margin: 0 10px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: color 0.3s, background-color 0.3s;
+        }
         .button-container {
-            text-align: center;
-            margin-top: 20px;
+            text-align: right;
+            margin-right: 400px;
         }
         .button-container button {
             background: none;
             border: none;
             color: #555;
-            margin: 0 15px;
+            margin: 0 230px;
             font-size: 20px;
             cursor: pointer;
             padding: 10px 20px;
@@ -30,30 +41,30 @@
             transition: color 0.3s, background-color 0.3s;
         }
         .button-container button:hover {
-            color: #6f0279;
-            background-color: #f3ef14;
+            color: #ffffff;
+            background-color: rgb(191, 26, 224);
         }
         .contributors {
             text-align: center;
             margin-top: 30px;
         }
         .contributors button {
-            background-color: #d6c20b;
+            background-color: #9fd4f8;
             border: none;
-            color: #6d5a05;
+            color: #070004;
             font-size: 24px;
             cursor: pointer;
             padding: 10px;
             margin: 0 10px;
         }
         .contributors button:hover {
-            color: #f106f1;
+            color: #fdfdf9;
         }
         .description {
             text-align: center;
             margin-top: 20px;
             font-size: 20px;
-            color: #333;
+            color: #1446fb;
         }
         .image-container {
             text-align: center;
@@ -72,14 +83,19 @@
 <body>
 
     <h1>The main people who helped make freakybob.site a real thing!</h1>
-    <audio 
-        src="66a Stadium Rave.mp3" 
-        loop 
+    <audio
+        src="66a Stadium Rave.mp3"
+        loop
         autoplay>
     </audio>
     <div class="button-container">
         <a href="index.html">
             <button>Go back to Main Website :3</button>
+        </a>
+    </div>
+    <div class="button-container">
+        <a href="people.html">
+            <button>Check out some other people!</button>
         </a>
     </div>
 
@@ -117,3 +133,5 @@
             personImage.style.display = (name in images) ? 'block' : 'none';
         }
     </script>
+</body>
+</html>
