@@ -30,12 +30,17 @@
             font-size: 2em;
         }
 
+        h2 {
+            color: #0ba810;
+            margin: 0;
+        }
+
         .music-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
+            padding: 10px;
+            max-width: 100%;
             margin: 0 auto;
             flex: 1;
         }
@@ -43,7 +48,7 @@
         .music-item {
             background-color: #cc02a0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease;
         }
@@ -55,7 +60,7 @@
         .music-item h3 {
             color: #ffeb3b;
             margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         .music-item audio {
@@ -64,7 +69,7 @@
         }
 
         footer {
-            padding: 20px;
+            padding: 15px;
             background-color: #87cefa;
             border-top: 4px solid #ffd700;
             color: #333;
@@ -87,6 +92,26 @@
             background-color: #ff3bef;
             transform: scale(1.10);
         }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+
+            .music-item h3 {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -95,7 +120,9 @@
     </a>
     
     <h1>SpongeBob Music Gallery</h1>
-
+    <h2>
+        <marquee>Within 2 weeks, this page will be shut down and archived for risks of getting the whole website shut down. We are sorry for the inconvenience and hope you enjoy the music for now :)</marquee>
+    </h2>
     <div class="music-gallery">
         <div class="music-item">
             <h3>Theme Song (Original)</h3>
@@ -204,7 +231,7 @@
     </div>
 
     <script>
-       var songs = document.querySelectorAll("audio");
+        var songs = document.querySelectorAll("audio");
 
         function playSong(e) {
             songs.forEach(song => {
@@ -214,7 +241,7 @@
                 }
             });
             e.currentTarget.play();
-        };
+        }
 
         songs.forEach(song => {
             song.addEventListener("play", playSong);
