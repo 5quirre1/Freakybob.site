@@ -8,37 +8,30 @@
         body {
             background-color: #ADD8E6;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: #333;
             text-align: center;
-        }
-        .button {
-            background: none;
-            border: none;
-            color: #555;
-            margin: 0 10px;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: color 0.3s, background-color 0.3s;
+            margin: 20px;
         }
         .button-container {
-            text-align: right;
-            margin-right: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
         }
         .button-container button {
             background: none;
-            border: none;
+            border: 2px solid #555;
             color: #555;
-            margin: 0 230px;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
             padding: 10px 20px;
             border-radius: 5px;
-            border: 2px solid #555;
             transition: color 0.3s, background-color 0.3s;
+            margin: 5px;
         }
         .button-container button:hover {
             color: #ffffff;
@@ -52,31 +45,46 @@
             background-color: #9fd4f8;
             border: none;
             color: #070004;
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
             padding: 10px;
-            margin: 0 10px;
+            margin: 5px;
         }
         .contributors button:hover {
             color: #fdfdf9;
         }
         .description {
             text-align: center;
-            margin-top: 20px;
-            font-size: 20px;
+            margin: 20px;
+            font-size: 18px;
             color: #1446fb;
         }
         .image-container {
             text-align: center;
-            margin-top: 20px;
+            margin: 20px;
         }
         .image-container img {
-            width: 200px;
+            width: 150px;
             height: auto;
             border-radius: 50%;
         }
         audio {
             display: none;
+        }
+        @media (max-width: 600px) {
+            .button-container button {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+            .contributors button {
+                font-size: 18px;
+            }
+            .description {
+                font-size: 16px;
+            }
+            .image-container img {
+                width: 120px;
+            }
         }
     </style>
 </head>
@@ -84,7 +92,7 @@
 
     <h1>The main people who helped make freakybob.site a real thing!</h1>
     <audio
-        src="audio/66a Stadium Rave.mp3"
+        src="audio/Carefree(chosic.com).mp3"
         loop
         autoplay>
     </audio>
@@ -92,8 +100,6 @@
         <a href="index.html">
             <button>Go back to Main Website :3</button>
         </a>
-    </div>
-    <div class="button-container">
         <a href="people.html">
             <button>Check out some other people!</button>
         </a>
@@ -114,7 +120,7 @@
         function showInfo(name) {
             const descriptions = {
                 'Squirrel': 'Squirrel bought the domain and coded the most of the website!',
-                'Wish': 'Wish did some coding to help the website and created the new Music Gallery!',
+                'Wish': 'Wish did some coding to help the website and fixed a lot of stuff including the music gallery!',
                 'Hater': '#2 Twitter Hater helped with giving all sorts of spongebob images!',
             };
 
