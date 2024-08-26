@@ -63,14 +63,18 @@
             width: 200px;
             height: auto;
             border-radius: 50%;
+            cursor: pointer;
         }
         audio {
+            display: none;
+        }
+        #main-image {
             display: none;
         }
     </style>
 </head>
 <body>
-
+    <img id="main-image" src="images/giancafort.jpeg" alt="Main Image">
     <h1>People who didn't help but still deserve to be here :)</h1>
     <audio 
         src="audio/25a SpongeBob SquarePants Closing Theme.mp3" 
@@ -93,10 +97,13 @@
     <div id="description" class="description"></div>
 
     <div class="image-container" id="person-image" style="display: none;">
-        <img id="image" alt="Person Image">
+        <img id="personImage" alt="Person Image">
     </div>
 
     <script>
+        let giancaClickCount = 0;
+        let isGiancaReplaced = false;
+
         function showInfo(name) {
             const descriptions = {
                 'Saam': 'Cool yippe',
@@ -110,17 +117,34 @@
                 'Saam': 'images/Saam.webp',
                 'KM': 'images/KM.webp',
                 'Noah': 'images/Noah.webp',
-                'Gianca': 'images/Gianca.png',
+                'Gianca': isGiancaReplaced ? 'images/giancafort.jpeg' : 'images/Gianca.png',
                 'George': 'images/George.png',
             };
 
             const descriptionDiv = document.getElementById('description');
             const personImage = document.getElementById('person-image');
-            const image = document.getElementById('image');
+            const image = document.getElementById('personImage');
 
             descriptionDiv.innerText = descriptions[name] || 'Information not available.';
             image.src = images[name] || '';
             personImage.style.display = (name in images) ? 'block' : 'none';
+
+            if (name === 'Gianca') {
+                image.onclick = handleGiancaImageClick; 
+            } else {
+                image.onclick = null;
+            }
+        }
+
+        function handleGiancaImageClick() {
+            if (isGiancaReplaced) return;
+
+            giancaClickCount++;
+            if (giancaClickCount >= 10) {
+                const image = document.getElementById('personImage');
+                image.src = 'images/giancafort.jpeg';
+                isGiancaReplaced = true;
+            }
         }
     </script>
 </body>
