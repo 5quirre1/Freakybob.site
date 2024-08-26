@@ -78,6 +78,18 @@
       object-fit: cover;
       border-radius: 10px;
     }
+    #mute-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background-color: rgb(1, 170, 128);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1001;
+        }
     @media only screen and (max-width: 768px) {
       .gallery img {
         width: 80%;
@@ -134,8 +146,24 @@
   <footer>
     <p>© 2024 freakybob.site. All rights are NOT reserved Lmao</p>
   </footer>
+  <button id="mute-button" style="display:none;">Mute Music</button>
   <audio autoplay loop>
     <source src="https://dn720302.ca.archive.org/0/items/wiiumusic/27%20-%20eShop%20-%20Menu%20%28Track%202%29.mp3" type="audio/mp3">
   </audio>
+  <script>
+    Mute button commands
+
+
+        muteButton.addEventListener('click', () => {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                muteButton.textContent = 'Mute Music';
+            } else {
+                backgroundMusic.muted = true;
+                muteButton.textContent = 'Unmute Music';
+            }
+        });
+
+  </script>
 </body>
 </html>
