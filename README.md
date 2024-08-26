@@ -1,5 +1,3 @@
-# This is a fork of Squirrel's Freakybob.site
-
 # I bought a freakybob domain. 
 I don't know why, but I was destined for it.
 freakybob.site is just meant for a meme relating to a freaky spongebob! We are hoping to put some episodes and a music gallery! I hope you guys enjoy this project for as it is still being updated!
