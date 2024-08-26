@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A place for Freakybob.">
     <meta content="Freakybob" property="og:title" />
-<meta content="Your one stop shop for all Freakybob content!" property="og:description" />
-<meta content="https://freakybob.site" property="og:url" />
-<meta content="https://media.discordapp.net/attachments/1266529763787280586/1277127467420876851/image.png?ex=66cc0924&is=66cab7a4&hm=100158aad2d0a4f770f87d464c6efa783ac173902af4df438d2cea4a9a75c2ea&=&format=webp&quality=lossless&width=1248&height=662" property="og:image" />
-<meta content="#006b79" data-react-helmet="true" name="theme-color" />
+    <meta content="Your one-stop shop for all Freakybob content!" property="og:description" />
+    <meta content="https://freakybob.site" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/1266529763787280586/1277127467420876851/image.png?ex=66cc0924&is=66cab7a4&hm=100158aad2d0a4f770f87d464c6efa783ac173902af4df438d2cea4a9a75c2ea&=&format=webp&quality=lossless&width=1248&height=662" property="og:image" />
+    <meta content="#006b79" data-react-helmet="true" name="theme-color" />
     <link rel="icon" type="image/x-icon" href="favicon (1).ico">
     <style>
         body::before {
@@ -24,7 +24,7 @@
         }
 
         body {
-            background-image: url('Bikinibottom.jpg');
+            background-image: url('images/Bikinibottom.jpg');
             background-color: aqua;
             background-size: cover;
             background-repeat: no-repeat;
@@ -50,10 +50,10 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
-
         h2 {
             color: yellow;
         }
+
         .popup {
             position: fixed;
             top: 0;
@@ -139,11 +139,13 @@
 </head>
 <body>
     <h1>freakybob</h1>
-<h2>
-    <marquee>The Music gallery is New, Up and running and is completly piracy free! Thank You Wish! </marquee>
-</h2>
+    <h2>
+        <marquee>The Music gallery is New, Up and running, and is completely piracy-free! Thank You Wish!|Image gallery is open and working! This is new so expect new updates!</marquee>
+    </h2>
     <a href="foundingpeople.html"><button>Check out the people who made this possible!</button></a>
     <a href="image-gallery.html"><button>Check out the image gallery!</button></a>
+    <a href="musicgallery.html"><button>Listen to Spongebob music!</button></a>
+    
     <div id="sound-popup" class="popup">
         <div class="popup-content">
             <p>Can we have permission for sound? If not, you won't hear the main screen music :( </p>
@@ -151,17 +153,18 @@
             <button id="no-button">No</button>
         </div>
     </div>
+    
+    <audio id="background-music" loop>
         <source src="audio/03 - System Music - First Time Setup (TV).mp3" type="audio/mp3">
     </audio>
 
     <!-- GitHub Button -->
     <a href="https://github.com/5quirre1/Freakybob.site" id="github-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png" alt="GitHub Logo">
     </a>
 
     <!-- Mute/Unmute Button -->
     <button id="mute-button" style="display:none;">Mute Music</button>
-    <a href="musicgallery.html"><button>Listen to Spongebob music!</button></a>
 
     <script>
         const popup = document.getElementById('sound-popup');
@@ -201,19 +204,6 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
