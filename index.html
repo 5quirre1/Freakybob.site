@@ -1,122 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <title>Freakybob.site</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance :3</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="A place for Freakybob.">
+    <meta content="Freakybob" property="og:title" />
+    <meta content="Your one-stop shop for all Freakybob content!" property="og:description" />
+    <meta content="https://freakybob.site" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/1266529763787280586/1277127467420876851/image.png?ex=66cc0924&is=66cab7a4&hm=100158aad2d0a4f770f87d464c6efa783ac173902af4df438d2cea4a9a75c2ea&=&format=webp&quality=lossless&width=1248&height=662" property="og:image" />
+    <meta content="#006b79" data-react-helmet="true" name="theme-color" />
+    <link rel="icon" type="image/x-icon" href="favicon (1).ico">
     <style>
-        body {
-            background-color: rgb(101, 9, 101);
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            color: pink;
-            font-size: large;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin: 50px 10%;
-            flex-wrap: wrap;
-        }
-        .maintainbob {
-            width: 700px;
-            margin-top: 20px;
-            cursor: pointer; 
-            transition: transform 0.2s;
-        }
-        .maintainbob:hover {
-            transform: scale(1.05);
-        }
-        .preview {
-            width: 490px;
-            margin-top: 75px;
-        }
-        h2 {
-            color: rgb(249, 73, 196);
-            font-size: medium;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: rgb(201, 23, 53);
-            border: none;
-            border-radius: 5px;
-            color: #333;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: rgb(212, 15, 159);
-            transform: scale(1.10);
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: -1;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-                margin: 20px 5%;
+        body {
+            background-image: url('Bikinibottom.jpg');
+            background-color: aqua;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', sans-serif;
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(218, 203, 3);
+            font-size: 42px;
+            margin-top: -250px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        h2 {
+            color: yellow;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 58, 53, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: rgb(168, 2, 57);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.9s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
             }
-            .maintainbob, .preview {
-                width: 90%;
-                margin: 10px 0;
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
-            .preview {
-                margin-top: 20px;
-            }
-            h2 {
-                margin-left: 0;
-                font-size: 1.2em;
-            }
+        }
+
+        button {
+            margin: 15px 0;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: rgb(172, 147, 5);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            max-width: 220px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: rgb(218, 203, 3);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        #mute-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background-color: rgb(1, 170, 128);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1001;
+        }
+
+        #github-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        #github-button img {
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
 <body>
-    <h1>This website is under maintenance, so please check back later. For now, you can watch some YouTube :3</h1>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <button>Youtube Main Screen</button>
-    </a>
-    <div class="container">
-        <img class="maintainbob" src="https://media.discordapp.net/attachments/1275200538019106847/1277130573902643211/maintenance_bob_no_bg.png?ex=66cc0c08&is=66caba88&hm=7d06b12e110ec49a78d816daf718174df146a62cb8423e4060975a790573f9ff&=&format=webp&quality=lossless&width=1177&height=662" alt="Maintenance Bob Image" onclick="playSound()">
-        <img class="preview" src="https://cdn.discordapp.com/attachments/1266529763787280586/1277343521321521328/image.png?ex=66ccd25b&is=66cb80db&hm=5819fd8bdcee61346c28370a4594045c51c51e44753c68ec53c34cc4e0a2f846&" alt="Preview Image">
+    <h1>freakybob</h1>
+    <h2>
+        <marquee>The Music gallery is New, Up and running, and is completely piracy-free! Thank You, Wish!</marquee>
+    </h2>
+    <a href="foundingpeople.html"><button>Check out the people who made this possible!</button></a>
+    <a href="image-gallery.html"><button>Check out the image gallery!</button></a>
+    <a href="musicgallery.html"><button>Listen to Spongebob music!</button></a>
+    
+    <div id="sound-popup" class="popup">
+        <div class="popup-content">
+            <p>Can we have permission for sound? If not, you won't hear the main screen music :( </p>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+        </div>
     </div>
-    <h2>The Preview of what the update should look like is on the right (Mobile would be on top)</h2>
-<a href="https://discord.gg/hCJtSFccVG"><img src="https://yt3.googleusercontent.com/Ws_BpAWD46mOjCW3XCnsZ0YmghW-6fhMf6d9pvCvb4g8JJftgvL54039U1mgh31OchR4ApMTezc=s900-c-k-c0x00ffffff-no-rj"></a>
-    <!-- ME IS SPONGEBOB -->
-    <audio id="maintenanceSound" src="audio/i’m-spongebob-made-with-Voicemod.mp3"></audio>
-     <audio 
-        src="audio/19 - Notifications Menu.mp3"
-        loop 
-        autoplay>
+    
+    <audio id="background-music">
+        <source src="audio/03 - System Music - First Time Setup (TV).mp3" type="audio/mp3">
     </audio>
+
+    <!-- GitHub Button -->
+    <a href="https://github.com/5quirre1/Freakybob.site" id="github-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png" alt="GitHub Logo">
+    </a>
+
+    <!-- Mute/Unmute Button -->
+    <button id="mute-button" style="display:none;">Mute Music</button>
+
     <script>
-        function playSound() {
-            var audio = document.getElementById('maintenanceSound');
-            audio.currentTime = 0;
-            audio.play();
+        const popup = document.getElementById('sound-popup');
+        const yesButton = document.getElementById('yes-button');
+        const noButton = document.getElementById('no-button');
+        const backgroundMusic = document.getElementById('background-music');
+        const muteButton = document.getElementById('mute-button');
+
+        function playMusic() {
+            backgroundMusic.play();
+            muteButton.style.display = 'block';
         }
+
+        yesButton.addEventListener('click', () => {
+            playMusic();
+            popup.style.display = 'none'; 
+        });
+
+        noButton.addEventListener('click', () => {
+            popup.style.display = 'none'; 
+        });
+
+        muteButton.addEventListener('click', () => {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                muteButton.textContent = 'Mute Music';
+            } else {
+                backgroundMusic.muted = true;
+                muteButton.textContent = 'Unmute Music';
+            }
+        });
+
+        window.onload = () => {
+            popup.style.display = 'flex';
+        };
     </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 
