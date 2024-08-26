@@ -1,50 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8" />
   <title>Image Gallery!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-image: url("images/spongebob's-big-red-chair-in-house.jpg");
-      background-color: rgb(238, 16, 197);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
     }
-    .top-bar {
-      padding: 15px;
-      background-color: #bc1de3;
-      border-bottom: 4px solid #bc1de3;
-      color: #4acaf9;
-      font-size: 1em;
-      text-align: center;
-      width: 100%;
-      position: relative;
-      top: 0;
-    }
-    .top-bar h1 {
-      color: rgb(214, 245, 56);
-      margin: 0;
-      font-size: 2em;
-    }
-    .top-bar p {
-      margin: 5px 0 0 0;
-      font-size: 1.2em;
-    }
     header {
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+    }
+    header h1 {
+      color: rgb(248, 72, 175);
     }
     main {
       flex-grow: 1;
     }
     footer {
       padding: 15px;
-      background-color: #bc1de3;
-      border-top: 4px solid #bc1de3;
-      color: #ccda0b;
+      background-color: #87cefa;
+      border-top: 4px solid #87cefa;
+      color: #333;
       font-size: 1em;
       text-align: center;
       width: 100%;
@@ -52,115 +33,68 @@
       bottom: 0;
     }
     button {
-      background-color: #ffbb00;
-      border: none;
-      border-radius: 5px;
-      color: #333;
-      padding: 10px 20px;
-      font-size: 1em;
-      cursor: pointer;
-      margin-top: -20px;
-    }
-    button:hover {
-      background-color: #0eca1a;
-      transform: scale(1.10);
-    }
+            background-color: #ffbb00;
+            border: none;
+            border-radius: 5px;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: px;
+        }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 10px;
     }
     .gallery img {
       width: 200px;
       height: 200px;
       margin: 10px;
       object-fit: cover;
-      border-radius: 10px;
     }
-    #mute-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px 15px;
-            background-color: rgb(1, 170, 128);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            z-index: 1001;
-        }
     @media only screen and (max-width: 768px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
       .gallery img {
         width: 80%;
         height: auto;
-        margin: 15px 0;
-      }
-      .top-bar h1 {
-        font-size: 1.8em;
-      }
-      .top-bar p {
-        font-size: 1.1em;
-      }
-      button {
-        font-size: 0.9em;
-        padding: 8px 16px;
+        margin: 20px 0;
       }
     }
     @media only screen and (max-width: 480px) {
       .gallery img {
         width: 90%;
-        margin: 10px 0;
-      }
-      .top-bar h1 {
-        font-size: 1.5em;
-      }
-      .top-bar p {
-        font-size: 1em;
-      }
-      button {
-        font-size: 0.8em;
-        padding: 7px 14px;
+        margin: 20px 0;
       }
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <h1>Welcome to the image gallery!</h1>
-    <p>A place where photos, Fan-art, or videos can be seen!</p>
-  </div>
-  <header>
-    <a href="index.html">
-      <button>Go back to main Website!</button>
-    </a>
-  </header>
+  <a href="index.html">
+    <button>Go back to main Website!</button>
+  </a>
+    <footer>
+        <header>
+            <h1>Welcome to the image gallery!</h1>
+            <p>A place where photos, Fan-art or videos can be seen!</p>
+          </header>
+    </footer>
   <main>
     <div class="gallery">
       <img src="images/spinchbob.png" alt="Image">
       <img src="images/sponebob.jpg" alt="Image">
       <img src="images/freakbobfounddead.png" alt="Image">
-      <!-- More images can be added later grhej,ensdjgn-->
+      <!-- I'ma add more images later -->
     </div>
   </main>
   <footer>
     <p>© 2024 freakybob.site. All rights are NOT reserved Lmao</p>
   </footer>
-  <button id="mute-button" style="display:none;">Mute Music</button>
   <audio autoplay loop>
     <source src="https://dn720302.ca.archive.org/0/items/wiiumusic/27%20-%20eShop%20-%20Menu%20%28Track%202%29.mp3" type="audio/mp3">
   </audio>
-  <script>
-        muteButton.addEventListener('click', () => {
-            if (backgroundMusic.muted) {
-                backgroundMusic.muted = false;
-                muteButton.textContent = 'Mute Music';
-            } else {
-                backgroundMusic.muted = true;
-                muteButton.textContent = 'Unmute Music';
-            }
-        });
-
-  </script>
 </body>
 </html>
