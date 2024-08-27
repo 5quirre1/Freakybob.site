@@ -78,39 +78,6 @@
       object-fit: cover;
       border-radius: 10px;
     }
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 58, 53, 0.8);
-      color: #e0f006;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .popup-content {
-      background: rgb(168, 2, 57);
-      padding: 25px;
-      text-align: center;
-      border-radius: 12px;
-      max-width: 90%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 0.9s ease;
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
     @media only screen and (max-width: 768px) {
       .gallery img {
         width: 80%;
@@ -173,36 +140,6 @@
   <audio id="backgroundMusic" autoplay loop>
     <source src="https://dn720302.ca.archive.org/0/items/wiiumusic/27%20-%20eShop%20-%20Menu%20%28Track%202%29.mp3" type="audio/mp3">
   </audio>
-  <div id="sound-popup" class="popup">
-    <div class="popup-content">
-      <p>For Bug Reasons, Please choose whether you want to hear the Image gallery or not :)</p>
-      <button id="yes-button">Yes</button>
-      <button id="no-button">No</button>
-    </div>
-  </div>
-  <script>
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    const popup = document.getElementById('sound-popup');
-    const yesButton = document.getElementById('yes-button');
-    const noButton = document.getElementById('no-button');
-
-    function playMusic() {
-      backgroundMusic.play();
-    }
-
-    yesButton.addEventListener('click', () => {
-      playMusic();
-      popup.style.display = 'none'; 
-    });
-
-    noButton.addEventListener('click', () => {
-      popup.style.display = 'none'; 
-    });
-
-    window.onload = () => {
-      popup.style.display = 'flex';
-    };
-  </script>
 </body>
 </html>
 
