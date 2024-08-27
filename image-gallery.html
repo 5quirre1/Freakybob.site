@@ -7,7 +7,7 @@
   <style>
     body {
       background-image: url("images/spongebob's-big-red-chair-in-house.jpg");
-      background-color: rgb(238, 16, 197);
+      background-color: rgb(65, 98, 190);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -15,9 +15,9 @@
     }
     .top-bar {
       padding: 15px;
-      background-color: #bc1de3;
-      border-bottom: 4px solid #bc1de3;
-      color: #4acaf9;
+      background-color: #FF91AF;
+      border-bottom: 4px solid #FF91AF;
+      color: #3077fa;
       font-size: 1em;
       text-align: center;
       width: 100%;
@@ -25,7 +25,7 @@
       top: 0;
     }
     .top-bar h1 {
-      color: rgb(214, 245, 56);
+      color: rgb(184, 14, 184);
       margin: 0;
       font-size: 2em;
     }
@@ -42,9 +42,9 @@
     }
     footer {
       padding: 15px;
-      background-color: #bc1de3;
-      border-top: 4px solid #bc1de3;
-      color: #ccda0b;
+      background-color: #FF91AF;
+      border-top: 4px solid #FF91AF;
+      color: #3077fa;
       font-size: 1em;
       text-align: center;
       width: 100%;
@@ -78,21 +78,38 @@
       object-fit: cover;
       border-radius: 10px;
     }
-    #mute-button {
-     position: absolute;
-  top: 89px;
-  right: 10px;
-  padding: 10px 15px;
-  background-color: rgb(241, 219, 49);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  z-index: 1001;
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 58, 53, 0.8);
+      color: #e0f006;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
     }
-    #mute-button:hover {
-      background-color: rgb(222, 220, 80);
-      transform: scale(1.10);
+
+    .popup-content {
+      background: rgb(168, 2, 57);
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+      max-width: 90%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.9s ease;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     @media only screen and (max-width: 768px) {
       .gallery img {
@@ -132,7 +149,10 @@
 <body>
   <div class="top-bar">
     <h1>Welcome to the image gallery!</h1>
-    <p>A place where photos, Fan-art, or videos can be seen!</p>
+    <strong><p>A place where photos, Fan-art, or videos can be seen!</p></strong>
+    <h2>
+      <marquee>This page is VERY New meaning that this page is still in development. Plz be patient and don't Annoy the Devs :)</marquee>
+    </h2>
   </div>
   <header>
     <a href="index.html">
@@ -141,32 +161,47 @@
   </header>
   <main>
     <div class="gallery">
-      <img src="images/spinchbob.png" alt="Image">
-      <img src="images/sponebob.jpg" alt="Image">
-      <img src="images/freakbobfounddead.png" alt="Image">
-      <!-- More images can be added later grhej,ensdjgn-->
+      <img src="images/spinchbob.png" alt="Spinchbob Character">
+      <img src="images/sponebob.jpg" alt="SpongeBob Image">
+      <img src="images/freakbobfounddead.png" alt="Freakbob Found Dead Scene">
+      <!-- More images can be added later MASHKJKR#F-->
     </div>
   </main>
   <footer>
-    <p>(ɔ) 2024 freakybob.site. All rights are NOT reserved Lmao</p>
+    <strong><p>© 2024 freakybob.site. All rights are NOT reserved Lmao</p></strong>
   </footer>
-  <button id="mute-button">Mute Music</button>
   <audio id="backgroundMusic" autoplay loop>
     <source src="https://dn720302.ca.archive.org/0/items/wiiumusic/27%20-%20eShop%20-%20Menu%20%28Track%202%29.mp3" type="audio/mp3">
   </audio>
+  <div id="sound-popup" class="popup">
+    <div class="popup-content">
+      <p>For Bug Reasons, Please choose whether you want to hear the Image gallery or not :)</p>
+      <button id="yes-button">Yes</button>
+      <button id="no-button">No</button>
+    </div>
+  </div>
   <script>
-    const muteButton = document.getElementById('mute-button');
     const backgroundMusic = document.getElementById('backgroundMusic');
+    const popup = document.getElementById('sound-popup');
+    const yesButton = document.getElementById('yes-button');
+    const noButton = document.getElementById('no-button');
 
-    muteButton.addEventListener('click', () => {
-      if (backgroundMusic.muted) {
-        backgroundMusic.muted = false;
-        muteButton.textContent = 'Mute Music';
-      } else {
-        backgroundMusic.muted = true;
-        muteButton.textContent = 'Unmute Music';
-      }
+    function playMusic() {
+      backgroundMusic.play();
+    }
+
+    yesButton.addEventListener('click', () => {
+      playMusic();
+      popup.style.display = 'none'; 
     });
+
+    noButton.addEventListener('click', () => {
+      popup.style.display = 'none'; 
+    });
+
+    window.onload = () => {
+      popup.style.display = 'flex';
+    };
   </script>
 </body>
 </html>
