@@ -182,26 +182,30 @@
   </div>
   <script>
     const backgroundMusic = document.getElementById('backgroundMusic');
-    const popup = document.getElementById('sound-popup');
-    const yesButton = document.getElementById('yes-button');
-    const noButton = document.getElementById('no-button');
+const popup = document.getElementById('sound-popup');
+const yesButton = document.getElementById('yes-button');
+const noButton = document.getElementById('no-button');
 
-    function playMusic() {
-      backgroundMusic.play();
+yesButton.addEventListener('click', () => {
+    backgroundMusic.play();
+    popup.style.display = 'none'; 
+    localStorage.setItem('musicPreference', 'yes');
+});
+
+noButton.addEventListener('click', () => {
+    popup.style.display = 'none'; 
+    localStorage.setItem('musicPreference', 'no');
+});
+
+window.onload = () => {
+    const musicPreference = localStorage.getItem('musicPreference');
+    if (!musicPreference) {
+        popup.style.display = 'flex';
+    } else if (musicPreference === 'yes') {
+        backgroundMusic.play();
     }
+};
 
-    yesButton.addEventListener('click', () => {
-      playMusic();
-      popup.style.display = 'none'; 
-    });
-
-    noButton.addEventListener('click', () => {
-      popup.style.display = 'none'; 
-    });
-
-    window.onload = () => {
-      popup.style.display = 'flex';
-    };
   </script>
 </body>
 </html>
