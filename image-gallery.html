@@ -79,44 +79,39 @@
       border-radius: 10px;
     }
     .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 58, 53, 0.8);
-      color: #e0f006;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 77, 70, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
 
-    .popup-content {
-      background: rgb(168, 2, 57);
-      padding: 25px;
-      text-align: center;
-      border-radius: 12px;
-      max-width: 90%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 0.9s ease;
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @media only screen and (max-width: 768px) {
-      .gallery img {
-        width: 80%;
-        height: auto;
-        margin: 15px 0;
-      }
+        .popup-content {
+            background: rgb(168, 2, 57);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.9s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
       .top-bar h1 {
         font-size: 1.8em;
       }
@@ -127,7 +122,6 @@
         font-size: 0.9em;
         padding: 8px 16px;
       }
-    }
     @media only screen and (max-width: 480px) {
       .gallery img {
         width: 90%;
@@ -175,37 +169,53 @@
   </audio>
   <div id="sound-popup" class="popup">
     <div class="popup-content">
-      <p>For Bug Reasons, Please choose whether you want to hear the Image gallery or not :)</p>
+      <strong><p>For Bug reasons, Please choose whether you want to hear the Image gallery or not :)</p></strong>
       <button id="yes-button">Yes</button>
       <button id="no-button">No</button>
     </div>
-  </div>
   <script>
+    const popup = document.getElementById('sound-popup');
+    const yesButton = document.getElementById('yes-button');
+    const noButton = document.getElementById('no-button');
     const backgroundMusic = document.getElementById('backgroundMusic');
-const popup = document.getElementById('sound-popup');
-const yesButton = document.getElementById('yes-button');
-const noButton = document.getElementById('no-button');
 
-yesButton.addEventListener('click', () => {
-    backgroundMusic.play();
-    popup.style.display = 'none'; 
-    localStorage.setItem('musicPreference', 'yes');
-});
-
-noButton.addEventListener('click', () => {
-    popup.style.display = 'none'; 
-    localStorage.setItem('musicPreference', 'no');
-});
-
-window.onload = () => {
-    const musicPreference = localStorage.getItem('musicPreference');
-    if (!musicPreference) {
-        popup.style.display = 'flex';
-    } else if (musicPreference === 'yes') {
+    function playMusic() {
         backgroundMusic.play();
     }
-};
 
-  </script>
+    function stopMusic() {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
+
+    
+    function setUserChoice(choice) {
+        localStorage.setItem('musicChoice', choice);
+    }
+
+
+    function getUserChoice() {
+        return localStorage.getItem('musicChoice');
+    }
+
+    yesButton.addEventListener('click', () => {
+        playMusic();
+        setUserChoice('yes');
+        popup.style.display = 'none';
+    });
+
+    
+    noButton.addEventListener('click', () => {
+        setUserChoice('no');
+        popup.style.display = 'none';
+    });
+
+    
+    window.onload = () => {
+    localStorage.removeItem('musicChoice'); // Clear stored choice
+    popup.style.display = 'flex'; // Show the pop-up
+};
+</script>
+
 </body>
 </html>
