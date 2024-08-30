@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance :3</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: rgb(101, 9, 101);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            color: pink;
+            font-size: large;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 50px 10%;
+            flex-wrap: wrap;
+        }
+        .maintainbob {
+            width: 790px;
+            margin-top: 70px;
+            margin-left: -40px;
+            cursor: pointer; 
+            transition: transform 0.2s;
+        }
+        .maintainbob:hover {
+            transform: scale(1.05);
+        }
+        .preview {
+            width: 490px;
+            margin-top: -20px;
+            margin-left: 700px;
+        }
+        h2 {
+            color: rgb(249, 73, 196);
+            font-size: medium;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: rgb(243, 239, 14);
+            border: none;
+            border-radius: 5px;
+            color: #3f0237;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: rgb(218, 178, 2);
+            transform: scale(1.20);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 5%;
+            }
+            .maintainbob, .preview {
+                width: 90%;
+                margin: 10px 0;
+            }
+            .preview {
+                margin-top: 20px;
+            }
+            h2 {
+                margin-left: 0;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>This website is under maintenance! You can still go to an older version and use all the functions!</h1>
+    <a href="oldindex.html">
+        <button>freakybob.site</button>
+    </a>
+    <div class="container">
+        <img class="maintainbob" src="images/maintenance_bob_no_bg.png" alt="Maintenance Bob Image" onclick="playSound()">
+        <img class="preview" src="Snapshots/Screenshot 2024-08-29 12.38.20 AM.png" alt="Preview Image">
+    </div>
+    <h2>The Preview of what the update should look like is on the right (Mobile would be on top)</h2>
+    <p>Join our Discord for updates about the website!</p>
+    <iframe src="https://discord.com/widget?id=1277349483633705042&theme=dark" width="250" height="320" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <!-- ME IS SPONGEBOB -->
+    <audio id="maintenanceSound" src="audio/i’m-spongebob-made-with-Voicemod.mp3"></audio>
+     <audio 
+        src="audio/19 - Notifications Menu.mp3"
+        loop 
+        autoplay>
+    </audio>
+    <script>
+        function playSound() {
+            var audio = document.getElementById('maintenanceSound');
+            audio.currentTime = 0;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
