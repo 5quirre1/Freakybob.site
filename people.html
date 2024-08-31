@@ -95,6 +95,7 @@
         <button onclick="showInfo('George')">Stanford</button>
         <button onclick="showInfo('Nomaakip')">Nomaakip</button>
         <button onclick="showInfo('Nintendofan64')">Nintendofan64</button>
+        <button onclick="showInfo('Lapis')">Lapis</button>
     </div>
     <div id="description" class="description"></div>
 
@@ -108,6 +109,7 @@ let isGiancaReplaced = false;
 let kmClickCount = 0;
 let isKMReplaced = false;
 
+    
         function showInfo(name) {
             const descriptions = {
         'Saam': 'Saam is cool yay!',
@@ -117,6 +119,7 @@ let isKMReplaced = false;
         'George': 'The Coolest Crackhead On Earth!',
         'Nomaakip': 'Has been learning html which is awesome! Hope to see them on the team!',
         'Nintendofan64': 'freakybob found my address and posted it on 4chan send help',
+        'Lapis': 'Is a really nice and cool person! (KiKi Simp)',
             };
 
             const images = {
@@ -127,6 +130,7 @@ let isKMReplaced = false;
         'George': 'images/George.png',
         'Nomaakip': 'images/Nomaakip.png',
         'Nintendofan64': 'images/Nintendofan.png',
+        'Lapis': 'images/10129038.jpg',
             };
 
             const descriptionDiv = document.getElementById('description');
@@ -140,9 +144,7 @@ let isKMReplaced = false;
              if (name === 'Gianca') {
         image.onclick = handleGiancaImageClick; 
     } else if (name === 'KM') {
-        image.onclick = handleKMImageClick; 
-    } else {
-        image.onclick = null;
+        image.onclick = handleKMImageClick;
     }
 }
         function handleGiancaImageClick() {
@@ -155,7 +157,6 @@ let isKMReplaced = false;
         isGiancaReplaced = true;
     }
 }
-
 function handleKMImageClick() {
     if (isKMReplaced) return;
 
