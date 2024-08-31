@@ -92,7 +92,11 @@
         <button onclick="showInfo('KM')">KM</button>
         <button onclick="showInfo('Noah')">Noah</button>
         <button onclick="showInfo('Gianca')">Gianca</button>
-        <button onclick="showInfo('George')">Crazed Maniac</button>
+        <button onclick="showInfo('George')">Stanford</button>
+        <button onclick="showInfo('Nomaakip')">Nomaakip</button>
+        <button onclick="showInfo('Nintendofan64')">Nintendofan64</button>
+        <button onclick="showInfo('Lapis')">Lapis</button>
+        <button onclick="showInfo('Mpax235')>Mpax235</button>
     </div>
     <div id="description" class="description"></div>
 
@@ -101,24 +105,35 @@
     </div>
 
     <script>
-        let giancaClickCount = 0;
-        let isGiancaReplaced = false;
+let giancaClickCount = 0;
+let isGiancaReplaced = false;
+let kmClickCount = 0;
+let isKMReplaced = false;
 
+    
         function showInfo(name) {
             const descriptions = {
-                'Saam': 'Cool yippe',
-                'KM': 'ehhhh, Sometimes cool.',
-                'Noah': 'Awesome Cool.',
-                'Gianca': 'Very Much Cool.',
-                'George': 'Cool Asf frfr.',
+        'Saam': 'Saam is cool yay!',
+        'KM': 'Is Now officially cool!',
+        'Noah': 'Noah is awesome frfr',
+        'Gianca': 'Fortnite Playing Twi-I mean, Really good at Fortnite!',
+        'George': 'The Coolest Crackhead On Earth!',
+        'Nomaakip': 'Has been learning html which is awesome! Hope to see them on the team!',
+        'Nintendofan64': 'freakybob found my address and posted it on 4chan send help',
+        'Lapis': 'Is a really nice and cool person! (KiKi Simp)',
+        'Mpax235': 'Added Garrys song in the Music Gallery!',
             };
 
             const images = {
-                'Saam': 'images/Saam.webp',
-                'KM': 'images/KM.webp',
-                'Noah': 'images/Noah.webp',
-                'Gianca': isGiancaReplaced ? 'images/giancafort.jpeg' : 'images/giancanew.png',
-                'George': 'images/George.png',
+        'Saam': 'images/Saam.webp',
+        'KM':   isKMReplaced ? 'images/KM.png' : 'images/KM.webp',
+        'Noah': 'images/Noah.webp',
+        'Gianca': isGiancaReplaced ? 'images/giancafort.jpeg' : 'images/giancanew.png',
+        'George': 'images/George.png',
+        'Nomaakip': 'images/Nomaakip.png',
+        'Nintendofan64': 'images/Nintendofan.png',
+        'Lapis': 'images/10129038.jpg',
+        'Mpax235': 'images/Mpax.png',
             };
 
             const descriptionDiv = document.getElementById('description');
@@ -129,23 +144,32 @@
             image.src = images[name] || '';
             personImage.style.display = (name in images) ? 'block' : 'none';
 
-            if (name === 'Gianca') {
-                image.onclick = handleGiancaImageClick; 
-            } else {
-                image.onclick = null;
-            }
-        }
-
+             if (name === 'Gianca') {
+        image.onclick = handleGiancaImageClick; 
+    } else if (name === 'KM') {
+        image.onclick = handleKMImageClick;
+    }
+}
         function handleGiancaImageClick() {
-            if (isGiancaReplaced) return;
+    if (isGiancaReplaced) return;
 
-            giancaClickCount++;
-            if (giancaClickCount >= 10) {
-                const image = document.getElementById('personImage');
-                image.src = 'images/giancafort.jpeg';
-                isGiancaReplaced = true;
-            }
-        }
+    giancaClickCount++;
+    if (giancaClickCount >= 10) {
+        const image = document.getElementById('personImage');
+        image.src = 'images/giancafort.jpeg';
+        isGiancaReplaced = true;
+    }
+}
+function handleKMImageClick() {
+    if (isKMReplaced) return;
+
+    kmClickCount++;
+    if (kmClickCount >= 10) {
+        const image = document.getElementById('personImage');
+        image.src = 'images/KM.png';
+        isKMReplaced = true;
+    }
+}
     </script>
 </body>
 </html>
