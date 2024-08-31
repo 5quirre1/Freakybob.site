@@ -12,7 +12,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            background-color: #f2f701;
+            background-color: #ee0c9b;
             font-family: 'Comic Sans MS', sans-serif;
         }
 
@@ -26,52 +26,14 @@
             padding: 20px;
             background-color: #87cefa;
             margin: 0;
-            border-bottom: 4px solid #ffd700;
+            border-bottom: 4px solid #e71292;
             font-size: 2em;
-        }
-
-        h2 {
-            color: #0ba810;
-            margin: 0;
-        }
-
-        .music-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 10px;
-            max-width: 100%;
-            margin: 0 auto;
-            flex: 1;
-        }
-
-        .music-item {
-            background-color: #cc02a0;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease;
-        }
-
-        .music-item:hover {
-            transform: scale(1.05);
-        }
-
-        .music-item h3 {
-            color: #ffeb3b;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .music-item audio {
-            width: 100%;
-            outline: none;
         }
 
         footer {
             padding: 15px;
             background-color: #87cefa;
-            border-top: 4px solid #ffd700;
+            border-top: 4px solid #8e1386;
             color: #333;
             font-size: 1em;
             margin-top: auto;
@@ -89,10 +51,14 @@
         }
 
         button:hover {
-            background-color: #ff3bef;
+            background-color: #4bff3b;
             transform: scale(1.10);
         }
 
+        .gif {
+            margin-top: 20px;
+            margin-left: 575px;
+        }
         @media screen and (max-width: 480px) {
             h1 {
                 font-size: 1.5em;
@@ -115,8 +81,10 @@
     </style>
 </head>
 <body>
-<h1>Oops!</h1>
-    <p>You took a wrong turn.</p>
+<h1>Oops! A 404 Page!</h1>
+    <p>How the fuck did you get here? </p>
     <a href="index.html"><button>Go to main page</button></a>
+    <img class="gif" src="https://media.tenor.com/2h9xhpYLKooAAAAi/furro.gif"    width="400" height="400">
+    <audio autoplay loop><source src="audio/EEK!.ogg" type="audio/ogg"></audio>
 </body>
 </html>
