@@ -144,9 +144,22 @@
             background: none;
             cursor: pointer;
         }
+        #bluesky-button {
+            position: fixed;
+            top: 78px;
+            left: 109px;
+            z-index: 1001;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
         #discord-button img {
             width: 90px;
             height: 60px;
+        }
+        #bluesky-button img {
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
@@ -179,6 +192,9 @@
 <a href="https://discord.gg/EQZ9YkVZmx" id="discord-button">
         <img src="images/pngegg.png" alt="Discord logo">
     </a>
+        <a href="https://bsky.app/profile/freakybobsite.bsky.social" alt="Bluesky" id="bluesky-button">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-AWDi3ztKcBJpDaOu3fkQh33y-pHi3fyljg&s" alt="Bluesky logo">
+        </a>
     <!-- Mute/Unmute Button -->
     <button id="mute-button" style="display:none;">Mute Music</button>
 
