@@ -1,4 +1,7 @@
-# I bought a freakybob domain. 
-I don't know why, but I was destined for it.
-freakybob.site is just meant for a meme relating to a freaky spongebob! We are hoping to add a music gallery and other stuff, too! I hope you guys enjoy this project for as it is still being updated.
+# Freakybob.site
+Freakybob.site is a website made by 5quirrel, wish13yt, #2 Twitter Hater and other contributors! 
+Welcome to the offical Github of <a href="https//freakybob.site"><button>freakybob.site</button> where the website was first birthed!
+This website has a lot of new features and is being updated mostly each week! 
+The Main Features of what the website has is the: 
+ <a href="https//freakybob.site/musicgallery.html"><button>Music Gallery!</button>
 <img src="Snapshots/Screenshot 2024-08-29 12.38.20 AM.png">
