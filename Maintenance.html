@@ -29,7 +29,7 @@
         .maintainbob {
             width: 770px;
             margin-top: 40px;
-            margin-left: -40px;
+            margin-left: -90px;
             cursor: pointer; 
             transition: transform 0.2s;
         }
@@ -38,7 +38,7 @@
         }
         .preview {
             width: 490px;
-            margin-top: 10px;
+            margin-top: -49px;
             margin-left: 700px;
         }
         h2 {
@@ -60,6 +60,25 @@
         button:hover {
             background-color: rgb(218, 178, 2);
             transform: scale(1.20);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 5%;
+            }
+            .maintainbob, .preview {
+                width: 90%;
+                margin: 10px 0;
+            }
+            .preview {
+                margin-top: 20px;
+            }
+            h2 {
+                margin-left: 0;
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
