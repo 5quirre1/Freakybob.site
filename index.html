@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A place for Freakybob.">
     <meta content="Freakybob" property="og:title" />
-    <meta content="Your one-stop shop for all Freakybob content!" property="og:description" />
+    <meta content="Together, we are freaky." property="og:description" />
     <meta content="https://freakybob.site" property="og:url" />
-    <meta content="https://media.discordapp.net/attachments/1266529763787280586/1277127467420876851/image.png?ex=66cc0924&is=66cab7a4&hm=100158aad2d0a4f770f87d464c6efa783ac173902af4df438d2cea4a9a75c2ea&=&format=webp&quality=lossless&width=1248&height=662" property="og:image" />
+    <meta content="https://github.com/5quirre1/Freakybob.site/blob/main/Snapshots/Screenshot%202024-08-29%2012.38.20%20AM.png" property="og:image" />
     <meta content="#006b79" data-react-helmet="true" name="theme-color" />
     <link rel="icon" type="image/x-icon" href="favicon (1).ico">
     <style>
@@ -46,7 +46,7 @@
             text-align: center;
             color: rgb(218, 203, 3);
             font-size: 42px;
-            margin-top: -130px;
+            margin-top: 30px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
@@ -60,7 +60,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 58, 53, 0.8);
+            background: black;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -110,8 +110,8 @@
         }
         #mute-button {
             position: fixed;
-            top: 10px;
-            right: 10px;
+            top: 1px;
+            right: 4px;
             padding: 10px 15px;
             background-color: rgb(1, 170, 128);
             border: none;
@@ -129,6 +129,7 @@
             border: none;
             background: none;
             cursor: pointer;
+            display: none;
         }
 
         #github-button img {
@@ -137,23 +138,41 @@
         }
         #discord-button {
             position: fixed;
-            top: 2px;
-            left: 60px;
+            top: -8px;
+            left: 38px;
             z-index: 1001;
             border: none;
             background: none;
             cursor: pointer;
+            display: none;
+        }
+        #bluesky-button {
+            position: fixed;
+            top: 19px;
+            left: 10px;
+            z-index: 1001;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: none;
         }
         #discord-button img {
             width: 90px;
             height: 60px;
+            margin-top: 119px;
+            margin-left: -50px;
+        }
+        #bluesky-button img {
+            width: 40px;
+            height: 40px;
+            margin-top: 44px;
         }
     </style>
 </head>
 <body>
-    <h1>freakybob</h1>
+    <h1>Freakybob</h1>
     <h2>
-        <marquee>Image Gallery is EXTREMLY Broken. We are trying to fix it as You read this :). The website may have slower updates due to school.</marquee>
+        <marquee>Welcome to Freakybob.site! | Website updates will be slower due to school :3 | Image Gallery is still broken :(</marquee>
     </h2>
     <a href="foundingpeople.html"><button>Check out the people who made this possible!</button></a>
     <a href="image-gallery.html"><button>Check out the image gallery!</button></a>
@@ -163,7 +182,9 @@
         <div class="popup-content">
             <p>Can we have permission for sound? If not, you won't hear the main screen music :( </p>
             <button id="yes-button">Yes</button>
+            <audio id="yessound" src="audio/hover-sound-effect.mp3" preload="auto"></audio>
             <button id="no-button">No</button>
+            <audio id="nosound" src="audio/hover-sound-effect.mp3" preload="auto"></audio>
         </div>
     </div>
     <!-- im so skibidi -->
@@ -179,44 +200,67 @@
 <a href="https://discord.gg/EQZ9YkVZmx" id="discord-button">
         <img src="images/pngegg.png" alt="Discord logo">
     </a>
+        <a href="https://bsky.app/profile/freakybob.site" alt="Bluesky" id="bluesky-button">
+            <img src="images/Bluesky.png" alt="Bluesky logo">
+        </a>
     <!-- Mute/Unmute Button -->
     <button id="mute-button" style="display:none;">Mute Music</button>
 
     <script>
-        const popup = document.getElementById('sound-popup');
-        const yesButton = document.getElementById('yes-button');
-        const noButton = document.getElementById('no-button');
-        const backgroundMusic = document.getElementById('background-music');
-        const muteButton = document.getElementById('mute-button');
+         const popup = document.getElementById('sound-popup');
+    const yesButton = document.getElementById('yes-button');
+    const noButton = document.getElementById('no-button');
+    const buttons = [yesButton, noButton];
+    const yesSound = document.getElementById('yessound');
+    const noSound = document.getElementById('nosound');
+    const backgroundMusic = document.getElementById('background-music');
+    const muteButton = document.getElementById('mute-button');
 
-        function playMusic() {
-            backgroundMusic.play();
-            muteButton.style.display = 'block';
-        }
-
-        yesButton.addEventListener('click', () => {
-            playMusic();
-            popup.style.display = 'none'; 
-        });
-
-        noButton.addEventListener('click', () => {
-            popup.style.display = 'none'; 
-        });
-
-        muteButton.addEventListener('click', () => {
-            if (backgroundMusic.muted) {
-                backgroundMusic.muted = false;
-                muteButton.textContent = 'Mute Music';
-            } else {
-                backgroundMusic.muted = true;
-                muteButton.textContent = 'Unmute Music';
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            if (button === yesButton) {
+                yesSound.currentTime = 0;
+                yesSound.play();
+            } else if (button === noButton) {
+                noSound.currentTime = 0;
+                noSound.play();
             }
         });
 
-        window.onload = () => {
-            popup.style.display = 'flex';
-        };
-    </script>
+        button.addEventListener('click', () => {
+            document.getElementById('discord-button').style.display = 'block';
+            document.getElementById('bluesky-button').style.display = 'block';
+            document.getElementById('github-button').style.display = 'block';
+        });
+    });
 
+    function playMusic() {
+        backgroundMusic.play();
+        muteButton.style.display = 'block';
+    }
+
+    yesButton.addEventListener('click', () => {
+        playMusic();
+        popup.style.display = 'none';
+    });
+
+    noButton.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    muteButton.addEventListener('click', () => {
+        if (backgroundMusic.muted) {
+            backgroundMusic.muted = false;
+            muteButton.textContent = 'Mute Music';
+        } else {
+            backgroundMusic.muted = true;
+            muteButton.textContent = 'Unmute Music';
+        }
+    });
+
+    window.onload = () => {
+        popup.style.display = 'flex';
+    };
+</script>
 </body>
 </html>
