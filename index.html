@@ -60,11 +60,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: black;
+            background: rgb(94, 1, 66);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            opacity: 1;
+            transition: opacity 3s ease;
+        }
+
+        .popup.fade-out {
+            opacity: 0;
         }
 
         .popup-content {
@@ -89,8 +95,7 @@
         }
 
         button {
-            margin-top: 100px;
-            margin: 12px 0;
+            margin-top: 12px;
             padding: 15px 25px;
             font-size: 18px;
             cursor: pointer;
@@ -108,6 +113,7 @@
             background-color: rgb(218, 203, 3);
             transform: translateY(-3px) scale(1.05);
         }
+
         #mute-button {
             position: fixed;
             top: 1px;
@@ -121,51 +127,39 @@
             z-index: 1001;
         }
 
-        #github-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1001;
-            border: none;
-            background: none;
-            cursor: pointer;
-            display: none;
-        }
-
-        #github-button img {
-            width: 40px;
-            height: 40px;
-        }
-        #discord-button {
-            position: fixed;
-            top: -8px;
-            left: 38px;
-            z-index: 1001;
-            border: none;
-            background: none;
-            cursor: pointer;
-            display: none;
-        }
+        #github-button,
+        #discord-button,
         #bluesky-button {
             position: fixed;
-            top: 19px;
-            left: 10px;
             z-index: 1001;
-            border: none;
-            background: none;
-            cursor: pointer;
-            display: none;
+            display: none; /* imagine being hidden LMAOO */
         }
-        #discord-button img {
-            width: 90px;
-            height: 60px;
-            margin-top: 119px;
-            margin-left: -50px;
+
+        #github-button {
+            top: 10px;
+            left: 10px;
         }
+
+        #discord-button {
+            top: 60px;
+            left: 10px;
+        }
+
+        #bluesky-button {
+            top: 110px;
+            left: 10px;
+        }
+
+        #github-button img,
+        #discord-button img,
         #bluesky-button img {
             width: 40px;
             height: 40px;
-            margin-top: 44px;
+        }
+
+        #discord-button img {
+            width: 90px;
+            height: 60px;
         }
     </style>
 </head>
@@ -177,90 +171,78 @@
     <a href="foundingpeople.html"><button>Check out the people who made this possible!</button></a>
     <a href="image-gallery.html"><button>Check out the image gallery!</button></a>
     <a href="musicgallery.html"><button>Listen to Spongebob music!</button></a>
-    <!-- fun fact: Wish tried to add a cookie to sound popup to make it disappear! it failed though -->
+     <!-- fun fact: Wish tried to add a cookie to sound popup to make it disappear! it failed though -->
     <div id="sound-popup" class="popup">
         <div class="popup-content">
-            <p>Can we have permission for sound? If not, you won't hear the main screen music :( </p>
-            <button id="yes-button">Yes</button>
-            <audio id="yessound" src="audio/hover-sound-effect.mp3" preload="auto"></audio>
-            <button id="no-button">No</button>
-            <audio id="nosound" src="audio/hover-sound-effect.mp3" preload="auto"></audio>
+            <p>Welcome to freakybob.site! Hope you enjoy the website just as much as we do!</p>
+            <button id="thanks-button">Thanks!</button>
+            <audio id="hover" src="audio/hover-sound-effect.mp3" preload="auto"></audio>
+            <audio id="thanks-sound" src="audio/old-radio-button-click-97549.mp3" preload="auto"></audio>
+             <!-- fun fact: I just tried to add a hover noise but I was lazy :3 -->
         </div>
     </div>
-    <!-- im so skibidi -->
-    <a href="https://scratch.mit.edu/projects/1059751585/" id="scratch-button"><button>Freakybob clicker (Scratch)</button>
+    <a href="https://scratch.mit.edu/projects/1059751585/" id="scratch-button"><button>Freakybob clicker (Scratch)</button></a>
     <audio id="background-music" loop>
         <source src="audio/03 - System Music - First Time Setup (TV).mp3" type="audio/mp3">
     </audio>
 
-    <!-- GitHub Button -->
     <a href="https://github.com/5quirre1/Freakybob.site" id="github-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png" alt="GitHub Logo">
     </a>
-<a href="https://discord.gg/EQZ9YkVZmx" id="discord-button">
+    <a href="https://discord.gg/EQZ9YkVZmx" id="discord-button">
         <img src="images/pngegg.png" alt="Discord logo">
     </a>
-        <a href="https://bsky.app/profile/freakybob.site" alt="Bluesky" id="bluesky-button">
-            <img src="images/Bluesky.png" alt="Bluesky logo">
-        </a>
-    <!-- Mute/Unmute Button -->
+    <a href="https://bsky.app/profile/freakybob.site" id="bluesky-button">
+        <img src="images/Bluesky.png" alt="Bluesky logo">
+    </a>
     <button id="mute-button" style="display:none;">Mute Music</button>
 
     <script>
-         const popup = document.getElementById('sound-popup');
-    const yesButton = document.getElementById('yes-button');
-    const noButton = document.getElementById('no-button');
-    const buttons = [yesButton, noButton];
-    const yesSound = document.getElementById('yessound');
-    const noSound = document.getElementById('nosound');
+    const popup = document.getElementById('sound-popup');
+    const thanksButton = document.getElementById('thanks-button');
+    const thanksSound = document.getElementById('thanks-sound');
+    const noSound = document.getElementById('hover');
     const backgroundMusic = document.getElementById('background-music');
     const muteButton = document.getElementById('mute-button');
+    const githubButton = document.getElementById('github-button');
+    const discordButton = document.getElementById('discord-button');
+    const blueskyButton = document.getElementById('bluesky-button');
 
+    thanksButton.addEventListener('click', () => {
+        thanksSound.play();
+        popup.classList.add('fade-out');
+        setTimeout(() => {
+            popup.style.display = 'none'; 
+            githubButton.style.display = 'block';
+            discordButton.style.display = 'block';
+            blueskyButton.style.display = 'block';
+            muteButton.style.display = 'block';
+            backgroundMusic.play();
+        }, 3000);
+    });
     buttons.forEach(button => {
-        button.addEventListener('mouseover', () => {
-            if (button === yesButton) {
+        button.addEventListener('mouseover'), () => {
+            if (button === thanksButton) {
                 yesSound.currentTime = 0;
                 yesSound.play();
-            } else if (button === noButton) {
-                noSound.currentTime = 0;
-                noSound.play();
             }
+        }
         });
-
-        button.addEventListener('click', () => {
-            document.getElementById('discord-button').style.display = 'block';
-            document.getElementById('bluesky-button').style.display = 'block';
-            document.getElementById('github-button').style.display = 'block';
-        });
-    });
-
-    function playMusic() {
-        backgroundMusic.play();
-        muteButton.style.display = 'block';
-    }
-
-    yesButton.addEventListener('click', () => {
-        playMusic();
-        popup.style.display = 'none';
-    });
-
-    noButton.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-
-    muteButton.addEventListener('click', () => {
-        if (backgroundMusic.muted) {
-            backgroundMusic.muted = false;
+    function toggleMusic() {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
             muteButton.textContent = 'Mute Music';
         } else {
-            backgroundMusic.muted = true;
+            backgroundMusic.pause();
             muteButton.textContent = 'Unmute Music';
         }
-    });
+    }
 
-    window.onload = () => {
-        popup.style.display = 'flex';
-    };
+    muteButton.addEventListener('click', toggleMusic);
+
+    window.addEventListener('load', () => {
+        setTimeout(() => popup.style.display = 'flex', 500);
+    });
 </script>
 </body>
 </html>
