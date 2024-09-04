@@ -142,7 +142,7 @@
 
         #discord-button {
             top: 60px;
-            left: 10px;
+            left: -7px;
         }
 
         #bluesky-button {
@@ -158,8 +158,8 @@
         }
 
         #discord-button img {
-            width: 90px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
@@ -201,7 +201,6 @@
     const popup = document.getElementById('sound-popup');
     const thanksButton = document.getElementById('thanks-button');
     const thanksSound = document.getElementById('thanks-sound');
-    const noSound = document.getElementById('hover');
     const backgroundMusic = document.getElementById('background-music');
     const muteButton = document.getElementById('mute-button');
     const githubButton = document.getElementById('github-button');
@@ -218,16 +217,9 @@
             blueskyButton.style.display = 'block';
             muteButton.style.display = 'block';
             backgroundMusic.play();
-        }, 3000);
+        }, 3000); // Ensure this matches the fade-out duration
     });
-    buttons.forEach(button => {
-        button.addEventListener('mouseover'), () => {
-            if (button === thanksButton) {
-                yesSound.currentTime = 0;
-                yesSound.play();
-            }
-        }
-        });
+
     function toggleMusic() {
         if (backgroundMusic.paused) {
             backgroundMusic.play();
@@ -241,7 +233,7 @@
     muteButton.addEventListener('click', toggleMusic);
 
     window.addEventListener('load', () => {
-        setTimeout(() => popup.style.display = 'flex', 500);
+        setTimeout(() => popup.style.display = 'flex', 500); // Show popup after 0.5 seconds
     });
 </script>
 </body>
