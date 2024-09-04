@@ -217,7 +217,7 @@
             blueskyButton.style.display = 'block';
             muteButton.style.display = 'block';
             backgroundMusic.play();
-        }, 3000); // Ensure this matches the fade-out duration
+        }, 3000);
     });
 
     function toggleMusic() {
@@ -233,7 +233,7 @@
     muteButton.addEventListener('click', toggleMusic);
 
     window.addEventListener('load', () => {
-        setTimeout(() => popup.style.display = 'flex', 500); // Show popup after 0.5 seconds
+        setTimeout(() => popup.style.display = 'flex', 500);
     });
 </script>
 </body>
