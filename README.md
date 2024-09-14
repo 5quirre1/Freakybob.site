@@ -17,6 +17,8 @@ This was made with these languages :3
 
 [![My Skills](https://skillicons.dev/icons?i=html,css,js,)](https://skillicons.dev)
 
+To see credit for the icons we use, please go to https://github.com/Freakybob-Team/freaky-icons.
+
 Some screenshots of the website :3
 
 <img src="Snapshots/Screenshot 2024-08-29 12.38.20 AM.png">
