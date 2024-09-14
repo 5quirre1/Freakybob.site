@@ -15,21 +15,20 @@
         body {
             background-color: rgb(5, 105, 105);
         }
-h1 {
-    text-align: center;
-    color: rgb(217, 224, 16);
-}
-p {
-    text-align: center;
-    color: rgb(206, 190, 190);
-}
-h2 {
-    text-align: center;
-    font-size: 20px;
-    color: #dbde06;
-}
-
-.button-container {
+        h1 {
+            text-align: center;
+            color: rgb(217, 224, 16);
+        }
+        p {
+            text-align: center;
+            color: rgb(206, 190, 190);
+        }
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            color: #dbde06;
+        }
+        .button-container {
             text-align: center;
             margin-top: 20px;
         }
@@ -48,30 +47,132 @@ h2 {
         .button-container button:hover {
             color: #0f000f;
             background-color: #f3ef14;
+            transform: scale(1.1);
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 40px;
+        }
+        #freakybob-orgin {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        #freakybob-orgin:hover {
+            transition: 0.8s;
+            transform: scale(1.1);
+        }
+        #freakybob-found {
+            margin-left: 20px;
+            width: 320px;
+            margin-top: 40px;
+        }
+        #freakybob-found:hover {
+            transition: 0.8s;
+            transform: scale(1.1);
+        }
+        .carousel-button {
+            background-color: #c107b5;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .carousel-button:hover {
+            background-color: #f3ef14;
+            color: #0f000f;
+        }
+        #carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #carousel {
+            display: flex;
+            overflow: hidden;
+            width: 400px;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-images img {
+            width: 400px;
+            height: auto;
+        }
+        #para1 {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #bede09;
+        }
+        #para2 {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #bede09;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop><source src="audio/39 - Wii U Chat - Lobby (TV).mp3" type="audio/mp3"></audio>
+    <p>This page looks better on a laptop or a desktop. Mobile is still in Development :3</p>
+    <strong><h1>Welcome to Freakybob.site</h1></strong>
+    <div class="button-container">
+        <a href="https://freakybob.site">
+            <button>Go back to Main Website :3</button>
+        </a>
+    </div>
+    <strong><p>Since You're here, You probably want to know what this is about :3</p></strong>
+    <h2>freakybob.site is a website that was created by <a href="https://github.com/5quirre1" id="squirre1">5quirre1</a> and <a href="https://github.com/wish13yt" id="wish">wish13yt</a>. This all started from Wish mentioning a "freakybob" domain. Everyone was looking at domains until Squirrel found a domain on a domain website. The domain was "freakybob.site" for $4.00. Squirrel bought it almost instantly starting the well deserved birth of freakybob.site!</h2>
+
+    <div class="content-wrapper">
+        <div class="image-container">
+            <img src="images/freakyboborigin.png" id="freakybob-orgin" alt="freakybob origin">
+            <strong><p id="para1">A screenshot of Wish saying "steam gift 50$-freakybob.com" which inspired Squirrel to buy and create freakybob.site</p></strong>
+            <img src="images/Foundfreakybob.site.png" id="freakybob-found" alt="Found freakybob site">
+            <strong><p id="para2">A screenshot of Squirrel finding the domain "freakybob.site"</p></strong>
+        </div>
+
+        <div id="carousel-container">
+            <button class="carousel-button" onclick="prevImage()">&#10094;</button>
+            <div id="carousel">
+                <div class="carousel-images" id="image-track">
+                    <!--I feel so sigma!-->
+                    <img src="Snapshots/oldfreakybob.png" alt="Image 1">
+                    <img src="Snapshots/Aug 22.png" alt="Image 2">
+                    <img src="Snapshots/Aug 23.png" alt="Image 3">
+                </div>
+            </div>
+            <button class="carousel-button" onclick="nextImage()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#image-track img');
+        const totalImages = images.length;
+
+        function updateCarousel() {
+            const imageTrack = document.getElementById('image-track');
+            const width = images[0].clientWidth;
+            imageTrack.style.transform = `translateX(-${currentIndex * width}px)`;
         }
 
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateCarousel();
+        }
 
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateCarousel();
+        }
 
-#squirre1 {
-    color: rgb(248, 120, 192);
-}
-#wish {
-    color: rgb(67, 212, 10);
-}
-    </style>
-    </head>
-    <body>
-        <audio autoplay loop><source src="audio/39 - Wii U Chat - Lobby (TV).mp3" type="audio/mp3"></audio>
-        <strong><h1>Welcome to Freakybob.site</h1></strong>
-        <div class="button-container">
-            <a href="https://freakybob.site">
-                <button>Go back to Main Website :3</button>
-            </a>
-        </div>
-        <strong><p>Since you're here, you probably want to know what this is about :3</p></strong>
-            <h2>
-            freakybob.site is a website that was created by <a href="https://github.com/5quirre1" id="squirre1">5quirre1</a> and <a href="https://github.com/wish13yt" id="wish">wish13yt</a>. This all started from Wish mentioning a "freakybob" domain. Everyone was looking at domains until Squirrel found a domain on a domain website. The domain was "freakybob.site" for $4.00. Squirrel bought it almost instantly starting the well-deserved birth of freakybob.site!
-            </h2>
-        <img src="/images/freakyboborigin.png">
-    </body>
+        window.addEventListener('resize', updateCarousel);
+    </script>
+</body>
 </html>
+
