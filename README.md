@@ -1,4 +1,4 @@
-# Freakybob.site
+# Please go to https://github.com/Freakybob-Team/Freakybob.site!
 Freakybob.site is a website made by 5quirrel, wish13yt, #2 Twitter Hater and other contributors! 
 Welcome to the offical Github of Freakybob.site where the website was first birthed!
 This website has a lot of new features and is being updated mostly each week! The main features of the website are:
